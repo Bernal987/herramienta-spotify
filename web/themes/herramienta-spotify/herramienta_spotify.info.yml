@@ -1,0 +1,14 @@
+name: Herramienta Spotify
+type: theme
+base theme: stark
+description: Tema custom para Spotify
+core_version_requirement: ^10
+
+libraries:
+  - herramienta_spotify/global
+
+regions:
+  header: Header
+  content: Content
+  sidebar: Sidebar
+  footer: Footer

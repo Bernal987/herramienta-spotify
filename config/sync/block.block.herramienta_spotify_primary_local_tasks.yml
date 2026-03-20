@@ -1,0 +1,22 @@
+uuid: 60a26d50-0538-4f22-8298-cb199a923d63
+langcode: es
+status: true
+dependencies:
+  theme:
+    - herramienta_spotify
+_core:
+  default_config_hash: Hh01DLj9k7UnNdPpOQXHZHW7GHf2OPNDQyCJF7_R9ac
+id: herramienta_spotify_primary_local_tasks
+theme: herramienta_spotify
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Solapas principales'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

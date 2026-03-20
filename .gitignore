@@ -46,3 +46,5 @@ sites/simpletest
 /web/vendor/
 /node_modules/
 /.ddev/
+/web/sites/*/files
+/.idea/

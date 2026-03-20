@@ -1,0 +1,20 @@
+uuid: 27c3f6ed-513d-4dfd-bd4e-282d38886474
+langcode: es
+status: true
+dependencies:
+  theme:
+    - herramienta_spotify
+_core:
+  default_config_hash: OQ9aJ-4qVwK1x00o9EOYK4eFDjQr_HLpbPiJaPSVZiQ
+id: herramienta_spotify_local_actions
+theme: herramienta_spotify
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Acciones principales de administración'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,21 @@
+uuid: fd6932a8-9372-48cf-a747-9da1fff884c5
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_de_lanzamiento
+    - node.type.cancion
+  module:
+    - datetime
+id: node.cancion.field_fecha_de_lanzamiento
+field_name: field_fecha_de_lanzamiento
+entity_type: node
+bundle: cancion
+label: 'Fecha de lanzamiento'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

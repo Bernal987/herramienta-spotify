@@ -1,0 +1,20 @@
+uuid: 1f43397f-c257-438d-afe3-935cf85b4474
+langcode: es
+status: true
+dependencies:
+  theme:
+    - herramienta_spotify
+_core:
+  default_config_hash: HLQY2xgby8K3vN_98hiOSasOhm9pdCsH234-s0duJ8Q
+id: herramienta_spotify_page_title
+theme: herramienta_spotify
+region: header
+weight: -30
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Título de la página'
+  label_display: '0'
+  provider: core
+visibility: {  }

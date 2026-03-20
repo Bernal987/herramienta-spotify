@@ -1,0 +1,19 @@
+uuid: ceceecdc-fd72-41b2-ab37-01662ce3977c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_duracion
+    - node.type.cancion
+id: node.cancion.field_duracion
+field_name: field_duracion
+entity_type: node
+bundle: cancion
+label: Duración
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: 7fc964c0-eefa-464d-93d9-748c3c84a9e7
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_destacado
+    - node.type.cancion
+id: node.cancion.field_destacado
+field_name: field_destacado
+entity_type: node
+bundle: cancion
+label: Destacado
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

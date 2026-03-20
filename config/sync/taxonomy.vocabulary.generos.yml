@@ -1,0 +1,9 @@
+uuid: b907052b-ce6a-4d38-9098-c7fa0a141d99
+langcode: es
+status: true
+dependencies: {  }
+name: Géneros
+vid: generos
+description: null
+weight: 0
+new_revision: false

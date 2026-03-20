@@ -1,0 +1,22 @@
+uuid: b18a5080-6e41-49aa-9790-45c893407141
+langcode: es
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - herramienta_spotify
+_core:
+  default_config_hash: WvPhI8OwllG0gE69-F8qL3ai3nd5SbYD6JpmEuZcyok
+id: herramienta_spotify_messages
+theme: herramienta_spotify
+region: header
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Mensajes de estado'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,29 @@
+uuid: 7a486668-b469-49b0-90a1-f39a954cd210
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_genero
+    - node.type.cancion
+    - taxonomy.vocabulary.generos
+id: node.cancion.field_genero
+field_name: field_genero
+entity_type: node
+bundle: cancion
+label: Género
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      generos: generos
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

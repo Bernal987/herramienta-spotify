@@ -1,0 +1,14 @@
+uuid: d2761872-bd71-4161-b248-1d93f216d33d
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.editor_de_canciones
+  module:
+    - user
+id: user_remove_role_action.editor_de_canciones
+label: 'Elimina el rol Editor de canciones al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: editor_de_canciones

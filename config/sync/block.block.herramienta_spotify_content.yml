@@ -1,0 +1,22 @@
+uuid: 60118fa1-b0a6-4f0a-b3e8-6a575a4248d9
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - herramienta_spotify
+_core:
+  default_config_hash: hBHXB7hC05XU7pDYzETt-GUcpFlogK1gkjyAsg0Ym58
+id: herramienta_spotify_content
+theme: herramienta_spotify
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenido principal de la página'
+  label_display: '0'
+  provider: system
+visibility: {  }

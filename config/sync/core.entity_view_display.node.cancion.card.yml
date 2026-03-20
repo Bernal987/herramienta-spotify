@@ -1,0 +1,62 @@
+uuid: c2f7f68d-9dbc-4e22-bd34-ca8901d6d5da
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.cancion.body
+    - field.field.node.cancion.field_artista
+    - field.field.node.cancion.field_comentarios
+    - field.field.node.cancion.field_destacado
+    - field.field.node.cancion.field_duracion
+    - field.field.node.cancion.field_fecha_de_lanzamiento
+    - field.field.node.cancion.field_genero
+    - field.field.node.cancion.field_portada
+    - node.type.cancion
+  module:
+    - image
+    - text
+    - user
+id: node.cancion.card
+targetEntityType: node
+bundle: cancion
+mode: card
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_artista:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_portada:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_comentarios: true
+  field_destacado: true
+  field_duracion: true
+  field_fecha_de_lanzamiento: true
+  field_genero: true
+  langcode: true

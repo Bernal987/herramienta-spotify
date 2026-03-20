@@ -1,0 +1,13 @@
+body {
+  background-color: #121212;
+  color: white;
+}
+h1 {
+  color: white;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+article:hover {
+  transform: scale(1.05);
+  background: #282828;
+}

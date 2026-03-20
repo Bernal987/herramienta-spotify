@@ -1,0 +1,17 @@
+uuid: 28508677-a67c-452d-a53c-1aa6756da08c
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.cancion
+  module:
+    - node
+id: editor_de_canciones
+label: 'Editor de canciones'
+weight: 4
+is_admin: null
+permissions:
+  - 'create cancion content'
+  - 'delete any cancion content'
+  - 'delete cancion revisions'
+  - 'edit any cancion content'

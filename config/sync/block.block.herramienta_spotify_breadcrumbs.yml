@@ -1,0 +1,22 @@
+uuid: 951b0b7d-ebad-4ac6-ab9d-177a1bbdb1b3
+langcode: es
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - herramienta_spotify
+_core:
+  default_config_hash: y9X3xgCsO59pQyzNLzY1D3SDJJxCHILLWkpPnmuTJ2E
+id: herramienta_spotify_breadcrumbs
+theme: herramienta_spotify
+region: header
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: 'Enlaces de ayuda a la navegación'
+  label_display: '0'
+  provider: system
+visibility: {  }

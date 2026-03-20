@@ -1,0 +1,22 @@
+uuid: c891bfe9-83ad-46cd-8c3e-96d002c38966
+langcode: es
+status: false
+dependencies:
+  theme:
+    - herramienta_spotify
+_core:
+  default_config_hash: BCWhood0xXFQYqxFgL1spXdb9KeIuXH1YvTdjIEedDg
+id: herramienta_spotify_secondary_local_tasks
+theme: herramienta_spotify
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Solapas secundarias'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

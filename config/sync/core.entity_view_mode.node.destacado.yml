@@ -1,0 +1,11 @@
+uuid: dc69432e-cc5d-4638-ba63-6660b108f20d
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.destacado
+label: Destacado
+description: ''
+targetEntityType: node
+cache: true

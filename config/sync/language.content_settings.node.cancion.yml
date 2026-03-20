@@ -1,0 +1,11 @@
+uuid: f24ff11b-f2f6-44b1-b037-caa27c118e19
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.cancion
+id: node.cancion
+target_entity_type_id: node
+target_bundle: cancion
+default_langcode: site_default
+language_alterable: false
