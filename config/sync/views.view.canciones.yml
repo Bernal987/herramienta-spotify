@@ -133,6 +133,7 @@ display:
               anonymous: '0'
               content_editor: '0'
               administrator: '0'
+              editor_de_canciones: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -242,6 +243,10 @@ display:
             group_items: {  }
       style:
         type: default
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
       row:
         type: 'entity:node'
         options:
