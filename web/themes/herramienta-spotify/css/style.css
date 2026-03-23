@@ -1,13 +1,65 @@
+/* FONDO GENERAL */
 body {
   background-color: #121212;
   color: white;
+  font-family: Arial, sans-serif;
 }
-h1 {
-  color: white;
+
+/* TITULO */
+.titulo-canciones {
   font-size: 28px;
+  font-weight: bold;
   margin-bottom: 20px;
 }
-article:hover {
-  transform: scale(1.05);
-  background: #282828;
+
+/* FILTROS */
+.filtros-canciones {
+  background: #181818;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+/* INPUT BUSCADOR */
+.filtros-canciones input {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  margin-right: 10px;
+}
+
+/* SELECT GENERO */
+.filtros-canciones select {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  margin-right: 10px;
+}
+
+/* BOTON */
+.filtros-canciones input[type="submit"] {
+  background: #1db954;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* GRID */
+.grid-canciones {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .grid-canciones {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-canciones {
+    grid-template-columns: 1fr;
+  }
 }

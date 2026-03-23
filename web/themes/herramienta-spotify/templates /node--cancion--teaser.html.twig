@@ -1,38 +1,38 @@
-<article style="background:#181818; color:#ffffff; border-radius:14px; padding:16px; margin-bottom:20px; box-shadow:0 6px 15px rgba(0,0,0,0.5); transition:0.3s;">
+<article style="background:#181818; color:#ffffff; border-radius:14px; padding:16px; margin-bottom:20px; box-shadow:0 6px 15px rgba(0,0,0,0.5);">
 
   <!-- PORTADA -->
   <div style="margin-bottom:12px;">
     {{ content.field_portada }}
   </div>
 
-  <!-- GENERO Y DURACION -->
+  <!-- GENERO Y DURACION ARRIBA -->
   <div style="display:flex; justify-content:space-between; font-size:12px; color:#1db954; margin-bottom:8px;">
     <div>{{ content.field_genero }}</div>
     <div>{{ content.field_duracion }}</div>
   </div>
 
   <!-- TITULO -->
-  <h2 style="font-size:20px; font-weight:bold; margin-bottom:6px; color:white;">
+  <h2 style="font-size:20px; font-weight:bold; margin-bottom:6px;">
     {{ label }}
   </h2>
+
+  <!-- DESTACADO -->
+  {% if node.field_destacado.value %}
+    <div style="margin-bottom:6px;">
+      <span style="background:#1db954; color:#000; font-size:11px; padding:3px 8px; border-radius:12px;">
+        Destacado
+      </span>
+    </div>
+  {% endif %}
 
   <!-- ARTISTA -->
   <div style="color:#b3b3b3; font-size:14px; margin-bottom:4px;">
     {{ content.field_artista }}
   </div>
-
-  <!-- FECHA -->
-  <div style="font-size:12px; color:#888;">
-    {{ content.field_fecha_lanzamiento }}
+  <!-- FECHA DE LANZAMIENTO -->
+  <div style="font-size:12px; color:#888; margin-top:4px;">
+    {{ content.field_fecha_de_lanzamiento }}
   </div>
 
-  <!-- DESTACADO -->
-  {% if node.field_destacado.value %}
-    <div style="margin-top:10px;">
-      <span style="background:#1db954; color:black; padding:4px 10px; border-radius:20px; font-size:12px;">
-        Destacado
-      </span>
-    </div>
-  {% endif %}
 
 </article>
