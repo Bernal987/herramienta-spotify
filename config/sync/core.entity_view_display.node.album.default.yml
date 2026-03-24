@@ -1,0 +1,55 @@
+uuid: e61bd0cf-e1a9-4185-9ac1-85e8bb3cefd4
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.album.body
+    - field.field.node.album.field_fecha_de_lanzamiento
+    - field.field.node.album.field_portada
+    - field.field.node.album.field_titulo
+    - node.type.album
+  module:
+    - datetime
+    - image
+    - user
+id: node.album.default
+targetEntityType: node
+bundle: album
+mode: default
+content:
+  field_fecha_de_lanzamiento:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_portada:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_titulo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  body: true
+  langcode: true

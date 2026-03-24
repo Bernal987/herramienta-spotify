@@ -5,7 +5,9 @@ dependencies:
   config:
     - core.entity_view_display.comment.comment.default
     - field.field.node.cancion.body
-    - field.field.node.cancion.field_artista
+    - field.field.node.cancion.field_album
+    - field.field.node.cancion.field_archivo_audio
+    - field.field.node.cancion.field_artista_ref
     - field.field.node.cancion.field_comentarios
     - field.field.node.cancion.field_destacado
     - field.field.node.cancion.field_duracion
@@ -16,6 +18,7 @@ dependencies:
   module:
     - comment
     - datetime
+    - file
     - image
     - text
     - user
@@ -31,13 +34,29 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
-  field_artista:
-    type: string
+  field_album:
+    type: entity_reference_label
     label: above
     settings:
-      link_to_entity: false
+      link: true
     third_party_settings: {  }
-    weight: 102
+    weight: 109
+    region: content
+  field_archivo_audio:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_artista_ref:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 110
     region: content
   field_comentarios:
     type: comment_default

@@ -1,0 +1,49 @@
+uuid: 64b614af-0841-4da7-90dd-1576766391f3
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.artista.body
+    - field.field.node.artista.field_descripcion
+    - field.field.node.artista.field_image
+    - field.field.node.artista.field_titulo
+    - image.style.medium
+    - node.type.artista
+  module:
+    - image
+    - text
+    - user
+id: node.artista.teaser
+targetEntityType: node
+bundle: artista
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_descripcion: true
+  field_titulo: true
+  langcode: true

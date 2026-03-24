@@ -5,7 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.destacado
     - field.field.node.cancion.body
-    - field.field.node.cancion.field_artista
+    - field.field.node.cancion.field_album
+    - field.field.node.cancion.field_archivo_audio
+    - field.field.node.cancion.field_artista_ref
     - field.field.node.cancion.field_comentarios
     - field.field.node.cancion.field_destacado
     - field.field.node.cancion.field_duracion
@@ -29,14 +31,6 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
-  field_artista:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 102
-    region: content
   field_portada:
     type: image
     label: above
@@ -54,6 +48,9 @@ content:
     weight: 100
     region: content
 hidden:
+  field_album: true
+  field_archivo_audio: true
+  field_artista_ref: true
   field_comentarios: true
   field_destacado: true
   field_duracion: true

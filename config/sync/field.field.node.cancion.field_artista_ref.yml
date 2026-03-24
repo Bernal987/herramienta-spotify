@@ -1,0 +1,29 @@
+uuid: 1a535a4f-271f-4566-b110-3a0c699ec116
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_artista_ref
+    - node.type.artista
+    - node.type.cancion
+id: node.cancion.field_artista_ref
+field_name: field_artista_ref
+entity_type: node
+bundle: cancion
+label: 'Artista '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      artista: artista
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

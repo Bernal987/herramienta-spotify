@@ -1,0 +1,40 @@
+uuid: eb59a748-5ecc-40e6-b66b-9a0c5a860e99
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.album.body
+    - field.field.node.album.field_fecha_de_lanzamiento
+    - field.field.node.album.field_portada
+    - field.field.node.album.field_titulo
+    - node.type.album
+  module:
+    - image
+    - user
+id: node.album.card
+targetEntityType: node
+bundle: album
+mode: card
+content:
+  field_portada:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  field_fecha_de_lanzamiento: true
+  field_titulo: true
+  langcode: true

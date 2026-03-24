@@ -1,0 +1,19 @@
+uuid: 1762f4a3-8eab-41a3-bf0a-1cdad86c4f64
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descripcion
+    - node.type.lista_de_reproduccion
+id: node.lista_de_reproduccion.field_descripcion
+field_name: field_descripcion
+entity_type: node
+bundle: lista_de_reproduccion
+label: 'Descripción '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

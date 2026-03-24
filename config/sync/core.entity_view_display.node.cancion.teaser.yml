@@ -6,7 +6,9 @@ dependencies:
     - core.entity_view_display.comment.comment.default
     - core.entity_view_mode.node.teaser
     - field.field.node.cancion.body
-    - field.field.node.cancion.field_artista
+    - field.field.node.cancion.field_album
+    - field.field.node.cancion.field_archivo_audio
+    - field.field.node.cancion.field_artista_ref
     - field.field.node.cancion.field_comentarios
     - field.field.node.cancion.field_destacado
     - field.field.node.cancion.field_duracion
@@ -17,6 +19,7 @@ dependencies:
   module:
     - comment
     - datetime
+    - file
     - image
     - text
     - user
@@ -31,63 +34,82 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    weight: 5
+    region: content
+  field_album:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
     weight: 3
     region: content
-  field_artista:
-    type: string
-    label: above
+  field_archivo_audio:
+    type: file_audio
+    label: hidden
     settings:
-      link_to_entity: false
+      controls: true
+      autoplay: false
+      loop: false
+      multiple_file_display_type: tags
     third_party_settings: {  }
-    weight: 5
+    weight: 8
+    region: content
+  field_artista_ref:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_comentarios:
     type: comment_default
-    label: above
+    label: hidden
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 8
+    weight: 10
     region: content
   field_destacado:
     type: boolean
-    label: above
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 7
+    weight: 9
     region: content
   field_duracion:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 4
+    weight: 6
     region: content
   field_fecha_de_lanzamiento:
     type: datetime_default
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_genero:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     weight: 1
     region: content
   field_portada:
     type: image
-    label: above
+    label: hidden
     settings:
       image_link: ''
       image_style: ''
@@ -99,7 +121,7 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
 hidden:
   langcode: true

@@ -5,7 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.card
     - field.field.node.cancion.body
-    - field.field.node.cancion.field_artista
+    - field.field.node.cancion.field_album
+    - field.field.node.cancion.field_archivo_audio
+    - field.field.node.cancion.field_artista_ref
     - field.field.node.cancion.field_comentarios
     - field.field.node.cancion.field_destacado
     - field.field.node.cancion.field_duracion
@@ -14,6 +16,7 @@ dependencies:
     - field.field.node.cancion.field_portada
     - node.type.cancion
   module:
+    - datetime
     - image
     - text
     - user
@@ -27,15 +30,58 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 1
     region: content
-  field_artista:
+  field_album:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_artista_ref:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_destacado:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_duracion:
     type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 102
+    weight: 6
+    region: content
+  field_fecha_de_lanzamiento:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_genero:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
     region: content
   field_portada:
     type: image
@@ -46,17 +92,14 @@ content:
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: 103
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
+  field_archivo_audio: true
   field_comentarios: true
-  field_destacado: true
-  field_duracion: true
-  field_fecha_de_lanzamiento: true
-  field_genero: true
   langcode: true

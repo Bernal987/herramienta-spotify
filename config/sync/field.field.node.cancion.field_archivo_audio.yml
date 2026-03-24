@@ -1,0 +1,27 @@
+uuid: 49513f12-be42-40e4-ac82-9f99d11eefa0
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_archivo_audio
+    - node.type.cancion
+  module:
+    - file
+id: node.cancion.field_archivo_audio
+field_name: field_archivo_audio
+entity_type: node
+bundle: cancion
+label: 'Archivo audio'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'mp3 wav'
+  max_filesize: 30mb
+  description_field: false
+field_type: file

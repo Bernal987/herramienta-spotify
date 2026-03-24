@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.node.cancion.body
-    - field.field.node.cancion.field_artista
+    - field.field.node.cancion.field_album
+    - field.field.node.cancion.field_archivo_audio
+    - field.field.node.cancion.field_artista_ref
     - field.field.node.cancion.field_comentarios
     - field.field.node.cancion.field_destacado
     - field.field.node.cancion.field_duracion
@@ -16,6 +18,7 @@ dependencies:
   module:
     - comment
     - datetime
+    - file
     - image
     - path
     - text
@@ -26,7 +29,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 121
+    weight: 16
     region: content
     settings:
       rows: 9
@@ -36,34 +39,49 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_artista:
-    type: string_textfield
-    weight: 122
+  field_album:
+    type: entity_reference_autocomplete
+    weight: 2
     region: content
     settings:
+      match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_archivo_audio:
+    type: file_generic
+    weight: 7
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_artista_ref:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_comentarios:
     type: comment_default
-    weight: 124
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
   field_destacado:
     type: boolean_checkbox
-    weight: 125
+    weight: 3
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_duracion:
     type: string_textfield
-    weight: 127
+    weight: 4
     region: content
     settings:
       size: 60
@@ -71,13 +89,13 @@ content:
     third_party_settings: {  }
   field_fecha_de_lanzamiento:
     type: datetime_default
-    weight: 126
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_genero:
     type: entity_reference_autocomplete
-    weight: 128
+    weight: 6
     region: content
     settings:
       match_operator: CONTAINS
@@ -87,7 +105,7 @@ content:
     third_party_settings: {  }
   field_portada:
     type: image_image
-    weight: 123
+    weight: 8
     region: content
     settings:
       progress_indicator: throbber
@@ -95,41 +113,41 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 2
+    weight: 9
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 15
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 120
+    weight: 15
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 16
+    weight: 13
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -137,7 +155,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
