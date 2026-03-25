@@ -1,0 +1,23 @@
+uuid: c0909bf7-ba94-4472-94a7-3cbdd99f6a72
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ano
+    - node.type.album
+id: node.album.field_ano
+field_name: field_ano
+entity_type: node
+bundle: album
+label: Año
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

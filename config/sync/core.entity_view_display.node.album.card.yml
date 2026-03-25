@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.card
     - field.field.node.album.body
+    - field.field.node.album.field_ano
+    - field.field.node.album.field_artista_ref
     - field.field.node.album.field_fecha_de_lanzamiento
     - field.field.node.album.field_portada
     - field.field.node.album.field_titulo
@@ -17,6 +19,14 @@ targetEntityType: node
 bundle: album
 mode: card
 content:
+  field_artista_ref:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_portada:
     type: image
     label: above
@@ -35,6 +45,7 @@ content:
     region: content
 hidden:
   body: true
+  field_ano: true
   field_fecha_de_lanzamiento: true
   field_titulo: true
   langcode: true

@@ -1,0 +1,19 @@
+uuid: 706408fc-d461-485e-9102-921812938689
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_titulo
+    - node.type.playlist
+id: node.playlist.field_titulo
+field_name: field_titulo
+entity_type: node
+bundle: playlist
+label: Título
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

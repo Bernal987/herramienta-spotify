@@ -1,0 +1,21 @@
+uuid: 9148f9e9-d832-4990-b99d-ec5d3f472b55
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_privacidad
+    - node.type.playlist
+id: node.playlist.field_privacidad
+field_name: field_privacidad
+entity_type: node
+bundle: playlist
+label: Privada
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Privada '
+  off_label: Pública
+field_type: boolean

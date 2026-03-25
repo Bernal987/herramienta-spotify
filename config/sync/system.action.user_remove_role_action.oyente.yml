@@ -1,0 +1,14 @@
+uuid: ef3674da-7a1c-4ed4-a066-908bfe6fc04a
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.oyente
+  module:
+    - user
+id: user_remove_role_action.oyente
+label: 'Elimina el rol Oyente al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: oyente

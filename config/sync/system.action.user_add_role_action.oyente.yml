@@ -1,0 +1,14 @@
+uuid: f76d3f21-67ff-43f1-9459-990b32efc371
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.oyente
+  module:
+    - user
+id: user_add_role_action.oyente
+label: 'Añade el rol Oyente al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: oyente

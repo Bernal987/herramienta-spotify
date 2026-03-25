@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.cancion.field_duracion
     - field.field.node.cancion.field_fecha_de_lanzamiento
     - field.field.node.cancion.field_genero
+    - field.field.node.cancion.field_numero_de_descargas
     - field.field.node.cancion.field_portada
     - node.type.cancion
   module:
@@ -124,4 +125,5 @@ content:
     weight: 4
     region: content
 hidden:
+  field_numero_de_descargas: true
   langcode: true

@@ -1,22 +1,20 @@
-uuid: beac5d32-65fd-4d78-a98b-328493a8fa18
+uuid: c11851d8-a62e-4f37-acc5-d9d7048c8d24
 langcode: es
 status: true
 dependencies:
   config:
-    - field.field.node.artista.body
-    - field.field.node.artista.field_descripcion
-    - field.field.node.artista.field_genero
-    - field.field.node.artista.field_image
-    - field.field.node.artista.field_titulo
-    - image.style.wide
-    - node.type.artista
+    - field.field.node.playlist.body
+    - field.field.node.playlist.field_canciones
+    - field.field.node.playlist.field_descripcion
+    - field.field.node.playlist.field_privacidad
+    - field.field.node.playlist.field_titulo
+    - node.type.playlist
   module:
-    - image
     - text
     - user
-id: node.artista.default
+id: node.playlist.default
 targetEntityType: node
-bundle: artista
+bundle: playlist
 mode: default
 content:
   body:
@@ -24,7 +22,15 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 3
+    region: content
+  field_canciones:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_descripcion:
     type: string
@@ -32,24 +38,15 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 4
     region: content
-  field_genero:
-    type: entity_reference_label
+  field_privacidad:
+    type: boolean
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
-    weight: 108
-    region: content
-  field_image:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: wide
-      image_loading:
-        attribute: eager
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
     third_party_settings: {  }
     weight: 2
     region: content
@@ -64,7 +61,7 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 5
     region: content
 hidden:
   langcode: true

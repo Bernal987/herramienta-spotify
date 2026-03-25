@@ -1,0 +1,19 @@
+uuid: 5c97be6c-2b3f-4e92-8066-fe64bfc60f24
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descripcion
+    - node.type.playlist
+id: node.playlist.field_descripcion
+field_name: field_descripcion
+entity_type: node
+bundle: playlist
+label: 'Descripción '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

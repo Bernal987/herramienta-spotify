@@ -1,0 +1,39 @@
+uuid: 9d0102e1-9ae6-47ad-8b18-499fd9071a59
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.playlist.body
+    - field.field.node.playlist.field_canciones
+    - field.field.node.playlist.field_descripcion
+    - field.field.node.playlist.field_privacidad
+    - field.field.node.playlist.field_titulo
+    - node.type.playlist
+  module:
+    - text
+    - user
+id: node.playlist.teaser
+targetEntityType: node
+bundle: playlist
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_canciones: true
+  field_descripcion: true
+  field_privacidad: true
+  field_titulo: true
+  langcode: true

@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.album.body
+    - field.field.node.album.field_ano
+    - field.field.node.album.field_artista_ref
     - field.field.node.album.field_fecha_de_lanzamiento
     - field.field.node.album.field_portada
     - field.field.node.album.field_titulo
@@ -26,6 +28,14 @@ content:
       trim_length: 600
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_artista_ref:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_fecha_de_lanzamiento:
     type: datetime_default
@@ -53,5 +63,6 @@ content:
     weight: 100
     region: content
 hidden:
+  field_ano: true
   field_titulo: true
   langcode: true

@@ -1,0 +1,33 @@
+uuid: 68dc9945-d865-47bf-b779-799b2d2cd90e
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.mi_perfil_musical
+  module:
+    - user
+    - views
+  theme:
+    - herramienta_spotify
+id: herramienta_spotify_views_block__mi_perfil_musical_block_1
+theme: herramienta_spotify
+region: sidebar
+weight: 0
+provider: null
+plugin: 'views_block:mi_perfil_musical-block_1'
+settings:
+  id: 'views_block:mi_perfil_musical-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated

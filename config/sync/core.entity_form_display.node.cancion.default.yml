@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.cancion.field_duracion
     - field.field.node.cancion.field_fecha_de_lanzamiento
     - field.field.node.cancion.field_genero
+    - field.field.node.cancion.field_numero_de_descargas
     - field.field.node.cancion.field_portada
     - image.style.thumbnail
     - node.type.cancion
@@ -101,6 +102,13 @@ content:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_numero_de_descargas:
+    type: number
+    weight: 26
+    region: content
+    settings:
       placeholder: ''
     third_party_settings: {  }
   field_portada:

@@ -1,0 +1,18 @@
+uuid: c840bc5b-0504-4dea-897f-a992d45975c8
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.album
+    - node.type.lista_de_reproduccion
+  module:
+    - node
+id: oyente
+label: Oyente
+weight: 5
+is_admin: null
+permissions:
+  - 'create album content'
+  - 'create lista_de_reproduccion content'
+  - 'delete any album content'
+  - 'delete any lista_de_reproduccion content'

@@ -1,0 +1,29 @@
+uuid: e01211f7-2946-4f96-98f8-bb2c60e91dd2
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_genero
+    - node.type.artista
+    - taxonomy.vocabulary.generos
+id: node.artista.field_genero
+field_name: field_genero
+entity_type: node
+bundle: artista
+label: Género
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      generos: generos
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

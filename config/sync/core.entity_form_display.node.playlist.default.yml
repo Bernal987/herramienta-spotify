@@ -1,24 +1,20 @@
-uuid: dadbd796-09b5-462a-aca6-3d80cd5e145e
+uuid: bae6384d-0f28-408b-afac-9f54c51d0e8c
 langcode: es
 status: true
 dependencies:
   config:
-    - field.field.node.album.body
-    - field.field.node.album.field_ano
-    - field.field.node.album.field_artista_ref
-    - field.field.node.album.field_fecha_de_lanzamiento
-    - field.field.node.album.field_portada
-    - field.field.node.album.field_titulo
-    - image.style.thumbnail
-    - node.type.album
+    - field.field.node.playlist.body
+    - field.field.node.playlist.field_canciones
+    - field.field.node.playlist.field_descripcion
+    - field.field.node.playlist.field_privacidad
+    - field.field.node.playlist.field_titulo
+    - node.type.playlist
   module:
-    - datetime
-    - image
     - path
     - text
-id: node.album.default
+id: node.playlist.default
 targetEntityType: node
-bundle: album
+bundle: playlist
 mode: default
 content:
   body:
@@ -37,32 +33,30 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_ano:
-    type: number
-    weight: 127
+  field_canciones:
+    type: entity_reference_autocomplete
+    weight: 125
     region: content
     settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_artista_ref:
-    type: options_select
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_fecha_de_lanzamiento:
-    type: datetime_default
-    weight: 126
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_portada:
-    type: image_image
+  field_descripcion:
+    type: string_textfield
     weight: 123
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_privacidad:
+    type: boolean_checkbox
+    weight: 124
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_titulo:
     type: string_textfield
