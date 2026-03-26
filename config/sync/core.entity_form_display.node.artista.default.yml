@@ -8,12 +8,49 @@ dependencies:
     - field.field.node.artista.field_genero
     - field.field.node.artista.field_image
     - field.field.node.artista.field_titulo
-    - image.style.thumbnail
+    - image.style.avatar_artista
     - node.type.artista
   module:
+    - field_group
     - image
     - path
     - text
+third_party_settings:
+  field_group:
+    group_organizacion_del_contenido:
+      children:
+        - title
+        - group_informacion_basica
+      label: 'Organización del contenido'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        direction: horizontal
+        width_breakpoint: 640
+    group_informacion_basica:
+      children:
+        - uid
+        - field_image
+        - field_descripcion
+      label: 'Información básica'
+      region: hidden
+      parent_name: group_organizacion_del_contenido
+      weight: 1
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
 id: node.artista.default
 targetEntityType: node
 bundle: artista
@@ -21,7 +58,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 121
+    weight: 9
     region: content
     settings:
       rows: 9
@@ -31,13 +68,13 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_descripcion:
     type: string_textfield
-    weight: 123
+    weight: 4
     region: content
     settings:
       size: 60
@@ -45,7 +82,7 @@ content:
     third_party_settings: {  }
   field_genero:
     type: entity_reference_autocomplete
-    weight: 6
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -55,15 +92,15 @@ content:
     third_party_settings: {  }
   field_image:
     type: image_image
-    weight: 1
+    weight: 2
     region: content
     settings:
       progress_indicator: throbber
-      preview_image_style: thumbnail
+      preview_image_style: avatar_artista
     third_party_settings: {  }
   field_titulo:
     type: string_textfield
-    weight: 122
+    weight: 10
     region: content
     settings:
       size: 60
@@ -78,34 +115,34 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 15
+    weight: 5
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 120
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 16
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 3
     region: content
     settings:
       size: 60
@@ -113,7 +150,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 1
     region: content
     settings:
       match_operator: CONTAINS

@@ -14,10 +14,11 @@ body {
 
 /* FILTROS */
 .filtros-canciones {
-  background: #181818;
+  background: #0f0f0f;
   padding: 15px;
   border-radius: 10px;
   margin-bottom: 25px;
+  border: 1px solid #3a3a3a;
 }
 
 /* INPUT BUSCADOR */
@@ -26,6 +27,8 @@ body {
   border-radius: 6px;
   border: none;
   margin-right: 10px;
+  background-color: #1f1f1f;
+  color: #ffffff;
 }
 
 /* SELECT GENERO */
@@ -34,6 +37,8 @@ body {
   border-radius: 6px;
   border: none;
   margin-right: 10px;
+  background-color: #1f1f1f;
+  color: #ffffff;
 }
 
 /* BOTON */
@@ -63,3 +68,54 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* TARJETAS */
+.grid-canciones .node {
+  background: linear-gradient(145deg, #1f1f1f, #2a2a2a);
+  border-radius: 12px;
+  padding: 15px;
+  transition: all 0.3s ease;
+  border: 1px solid #3a3a3a;
+}
+
+/* HOVER TARJETA */
+.grid-canciones .node:hover {
+  background: linear-gradient(145deg, #2a2a2a, #3a3a3a);
+  transform: translateY(-5px);
+}
+
+/* TITULO DE CANCION */
+.grid-canciones h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* CAMPOS (genero, duracion, etc) */
+.grid-canciones .field {
+  font-size: 14px;
+  color: #b3b3b3;
+  margin-bottom: 5px;
+}
+
+/* DESTACADO */
+.destacado {
+  color: #1db954;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* IMAGEN PORTADA */
+.grid-canciones img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+/* INFO SUPERIOR (genero + duracion) */
+.info-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+

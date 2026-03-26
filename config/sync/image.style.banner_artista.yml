@@ -1,0 +1,15 @@
+uuid: e8a42973-dcc7-456b-a28f-59070c0411d6
+langcode: es
+status: true
+dependencies: {  }
+name: banner_artista
+label: 'Banner artista '
+effects:
+  7f2295b2-01b6-413e-a675-a47dfba3794e:
+    uuid: 7f2295b2-01b6-413e-a675-a47dfba3794e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1200
+      height: 400
+      anchor: center-center

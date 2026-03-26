@@ -1,0 +1,22 @@
+uuid: bce2ba38-56e0-4047-b623-de0e585636ca
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: artista
+label: Artista
+type: 'canonical_entities:node'
+pattern: 'artista/[node:title]'
+selection_criteria:
+  0b7c9fb9-522d-4648-b666-5a586958de1b:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 0b7c9fb9-522d-4648-b666-5a586958de1b
+    context_mapping:
+      node: node
+    bundles:
+      artista: artista
+selection_logic: and
+weight: -5
+relationships: {  }

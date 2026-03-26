@@ -1,0 +1,15 @@
+uuid: 27b4127a-b5cf-4872-bc9e-2d64b2debfe2
+langcode: es
+status: true
+dependencies: {  }
+name: avatar_artista
+label: 'Avatar artista'
+effects:
+  f44a9a57-987f-4fc5-bc52-4bd8c307bf3f:
+    uuid: f44a9a57-987f-4fc5-bc52-4bd8c307bf3f
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 200
+      height: 200
+      anchor: center-center

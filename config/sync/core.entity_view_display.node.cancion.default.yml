@@ -19,10 +19,30 @@ dependencies:
   module:
     - comment
     - datetime
+    - field_group
     - file
     - image
     - text
     - user
+third_party_settings:
+  field_group:
+    group_datos_tecnicos:
+      children:
+        - field_duracion
+        - field_archivo_audio
+      label: 'Datos técnicos '
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        open: false
+        description: ''
+        required_fields: false
 id: node.cancion.default
 targetEntityType: node
 bundle: cancion
@@ -33,7 +53,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 3
     region: content
   field_album:
     type: entity_reference_label
@@ -41,7 +61,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 109
+    weight: 9
     region: content
   field_archivo_audio:
     type: file_audio
@@ -52,7 +72,7 @@ content:
       loop: false
       multiple_file_display_type: tags
     third_party_settings: {  }
-    weight: 111
+    weight: 1
     region: content
   field_artista_ref:
     type: entity_reference_label
@@ -60,7 +80,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 110
+    weight: 10
     region: content
   field_comentarios:
     type: comment_default
@@ -69,7 +89,7 @@ content:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 104
+    weight: 5
     region: content
   field_destacado:
     type: boolean
@@ -79,7 +99,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 105
+    weight: 6
     region: content
   field_duracion:
     type: string
@@ -87,7 +107,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 107
+    weight: 1
     region: content
   field_fecha_de_lanzamiento:
     type: datetime_default
@@ -96,7 +116,7 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 106
+    weight: 7
     region: content
   field_genero:
     type: entity_reference_label
@@ -104,7 +124,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 108
+    weight: 8
     region: content
   field_numero_de_descargas:
     type: number_integer
@@ -113,7 +133,7 @@ content:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 112
+    weight: 11
     region: content
   field_portada:
     type: image
@@ -124,12 +144,12 @@ content:
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: 103
+    weight: 4
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 2
     region: content
 hidden:
   langcode: true

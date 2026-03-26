@@ -1,0 +1,15 @@
+uuid: 7c4a8ae0-6638-432c-8108-0960556cab4a
+langcode: es
+status: true
+dependencies: {  }
+name: card_album
+label: 'Card álbum'
+effects:
+  50b6d7f9-1203-41a1-8d5b-99c8251ff438:
+    uuid: 50b6d7f9-1203-41a1-8d5b-99c8251ff438
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 400
+      anchor: center-center

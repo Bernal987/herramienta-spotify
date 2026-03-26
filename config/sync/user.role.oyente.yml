@@ -3,8 +3,7 @@ langcode: es
 status: true
 dependencies:
   config:
-    - node.type.album
-    - node.type.lista_de_reproduccion
+    - node.type.playlist
   module:
     - node
 id: oyente
@@ -12,7 +11,7 @@ label: Oyente
 weight: 5
 is_admin: null
 permissions:
-  - 'create album content'
-  - 'create lista_de_reproduccion content'
-  - 'delete any album content'
-  - 'delete any lista_de_reproduccion content'
+  - 'delete any playlist content'
+  - 'delete own playlist content'
+  - 'edit any playlist content'
+  - 'edit own playlist content'

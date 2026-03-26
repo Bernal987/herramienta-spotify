@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.album.field_ano
     - field.field.node.album.field_artista_ref
     - field.field.node.album.field_fecha_de_lanzamiento
+    - field.field.node.album.field_image
     - field.field.node.album.field_portada
     - field.field.node.album.field_titulo
     - node.type.album
@@ -47,5 +48,6 @@ hidden:
   body: true
   field_ano: true
   field_fecha_de_lanzamiento: true
+  field_image: true
   field_titulo: true
   langcode: true

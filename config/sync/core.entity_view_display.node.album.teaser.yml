@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.album.field_ano
     - field.field.node.album.field_artista_ref
     - field.field.node.album.field_fecha_de_lanzamiento
+    - field.field.node.album.field_image
     - field.field.node.album.field_portada
     - field.field.node.album.field_titulo
     - node.type.album
@@ -45,6 +46,17 @@ content:
       format_type: medium
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: -1
     region: content
   field_portada:
     type: image

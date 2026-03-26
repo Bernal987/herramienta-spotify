@@ -1,0 +1,11 @@
+uuid: 12661427-a910-432d-b616-a4238cb2ad19
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.token
+label: Comodín
+description: ''
+targetEntityType: node
+cache: true

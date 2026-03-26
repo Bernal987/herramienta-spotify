@@ -1,0 +1,22 @@
+uuid: 007de5e1-d028-43a2-8f00-e4170bcb142d
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: album
+label: Álbum
+type: 'canonical_entities:node'
+pattern: 'album/[node:title]'
+selection_criteria:
+  e69e9441-a4a1-4292-a61b-bed5632fe742:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: e69e9441-a4a1-4292-a61b-bed5632fe742
+    context_mapping:
+      node: node
+    bundles:
+      album: album
+selection_logic: and
+weight: -5
+relationships: {  }

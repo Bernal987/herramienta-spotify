@@ -19,9 +19,11 @@
         "drupal/core-composer-scaffold": "^10.6",
         "drupal/core-project-message": "^10.6",
         "drupal/core-recommended": "^10.6",
+        "drupal/field_group": "^4.0",
         "drupal/field_permissions": "^1.5",
         "drupal/gin": "^4.1",
         "drupal/honeypot": "^2.2",
+        "drupal/pathauto": "^1.14",
         "drupal/webform": "^6.2",
         "drush/drush": "^13.7"
     },

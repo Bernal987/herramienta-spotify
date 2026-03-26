@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.artista.field_titulo
     - node.type.artista
   module:
+    - image
     - user
 id: node.artista.card
 targetEntityType: node
@@ -23,16 +24,26 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 8
+    weight: 0
+    region: content
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 2
     region: content
 hidden:
   body: true
   field_descripcion: true
-  field_image: true
   field_titulo: true
   langcode: true
