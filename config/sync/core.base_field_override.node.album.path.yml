@@ -1,0 +1,20 @@
+uuid: c1d4dc06-2725-4bc7-969e-fc9b1f51728b
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.album
+  module:
+    - path
+id: node.album.path
+field_name: path
+entity_type: node
+bundle: album
+label: 'Alias de URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

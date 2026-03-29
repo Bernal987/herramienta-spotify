@@ -1,0 +1,18 @@
+uuid: 854f7db7-21d1-44c4-b1a5-bd2a3a27b6a0
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.artista
+id: node.artista.created
+field_name: created
+entity_type: node
+bundle: artista
+label: 'Fecha de autoría'
+description: 'The date and time that the content was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

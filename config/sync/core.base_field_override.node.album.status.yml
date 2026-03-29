@@ -1,0 +1,22 @@
+uuid: 7c2028c3-ce83-4813-8643-f57d56b7fff8
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.album
+id: node.album.status
+field_name: status
+entity_type: node
+bundle: album
+label: Publicado
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

@@ -1,0 +1,22 @@
+uuid: 98520b46-6854-4413-aabd-dd319873b996
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.playlist
+id: node.playlist.promote
+field_name: promote
+entity_type: node
+bundle: playlist
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

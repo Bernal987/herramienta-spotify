@@ -1,0 +1,20 @@
+uuid: 37f4f842-6b8c-4a6b-90d7-3e8ff60d1893
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.cancion
+  module:
+    - path
+id: node.cancion.path
+field_name: path
+entity_type: node
+bundle: cancion
+label: 'Alias de URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

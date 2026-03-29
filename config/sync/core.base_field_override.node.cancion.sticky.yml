@@ -1,0 +1,22 @@
+uuid: ceab6daf-d1d1-4281-80c5-a859cdc34fad
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.cancion
+id: node.cancion.sticky
+field_name: sticky
+entity_type: node
+bundle: cancion
+label: 'Fijo al comienzo de las listas'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

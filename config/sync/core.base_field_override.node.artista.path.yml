@@ -1,0 +1,20 @@
+uuid: 32557c78-3d3f-41af-b11d-416f81e628ee
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.artista
+  module:
+    - path
+id: node.artista.path
+field_name: path
+entity_type: node
+bundle: artista
+label: 'Alias de URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

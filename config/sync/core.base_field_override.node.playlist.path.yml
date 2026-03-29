@@ -1,0 +1,20 @@
+uuid: e598eec9-ce1d-4b66-a86a-5911cbdae894
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.playlist
+  module:
+    - path
+id: node.playlist.path
+field_name: path
+entity_type: node
+bundle: playlist
+label: 'Alias de URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

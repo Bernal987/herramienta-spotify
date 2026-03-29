@@ -1,0 +1,20 @@
+uuid: 564b0126-e996-4024-a907-b7da1b7c7341
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.artista
+id: node.artista.uid
+field_name: uid
+entity_type: node
+bundle: artista
+label: 'Escrito por'
+description: 'El nombre de usuario del autor del contenido.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

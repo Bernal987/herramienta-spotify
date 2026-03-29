@@ -1,0 +1,18 @@
+uuid: b9f3583c-44ca-4310-b1c5-8f1079b54772
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.album
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.album
+target_entity_type_id: node
+target_bundle: album
+default_langcode: site_default
+language_alterable: false

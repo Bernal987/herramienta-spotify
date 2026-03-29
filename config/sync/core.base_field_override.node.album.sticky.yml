@@ -1,0 +1,22 @@
+uuid: be223da6-02c0-4442-b214-c3831574d79d
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.album
+id: node.album.sticky
+field_name: sticky
+entity_type: node
+bundle: album
+label: 'Fijo al comienzo de las listas'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

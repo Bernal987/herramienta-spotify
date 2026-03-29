@@ -1,0 +1,22 @@
+uuid: a955e892-cdcd-4b2c-9b84-252d3577b219
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.playlist
+id: node.playlist.status
+field_name: status
+entity_type: node
+bundle: playlist
+label: Publicado
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean
