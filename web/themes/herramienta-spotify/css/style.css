@@ -119,3 +119,80 @@ body {
   margin-bottom: 10px;
 }
 
+
+
+
+
+
+/* LANGUAGE SWITCHER MODERNO (COMPATIBLE DRUPAL) */
+.language-switcher-language-url {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+}
+
+/* BOTON PRINCIPAL */
+.language-switcher-language-url::before {
+  content: "🌐 Idioma";
+  background: #1f1f1f;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* OCULTAR LISTA */
+.language-switcher-language-url ul {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: #1f1f1f;
+  border-radius: 10px;
+  padding: 10px;
+  list-style: none;
+  border: 1px solid #3a3a3a;
+  min-width: 120px;
+  z-index: 999;
+}
+
+/* MOSTRAR AL HOVER */
+.language-switcher-language-url:hover ul {
+  display: block;
+}
+
+/* ITEMS */
+.language-switcher-language-url ul li {
+  margin-bottom: 5px;
+}
+
+.language-switcher-language-url ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  padding: 6px;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.language-switcher-language-url ul li a:hover {
+  background: #1db954;
+  color: black;
+}
+
+/* ACTIVO */
+.language-switcher-language-url .is-active {
+  background: #1db954;
+  color: black;
+  font-weight: bold;
+}
+
+/* OCULTAR TITULO DEL BLOQUE DE IDIOMA (GIN + OLIVERO) */
+.block-language-block h2,
+.block-language-block .block-title,
+.block-language-block .block__title,
+.language-switcher-language-url h2,
+.language-switcher-language-url .block-title {
+  display: none !important;
+}
