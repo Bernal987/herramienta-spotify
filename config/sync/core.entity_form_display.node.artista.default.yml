@@ -4,10 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.node.artista.body
-    - field.field.node.artista.field_descripcion
+    - field.field.node.artista.feeds_item
     - field.field.node.artista.field_genero
     - field.field.node.artista.field_image
-    - field.field.node.artista.field_titulo
     - image.style.avatar_artista
     - node.type.artista
   module:
@@ -72,14 +71,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_descripcion:
-    type: string_textfield
-    weight: 4
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_genero:
     type: entity_reference_autocomplete
     weight: 3
@@ -97,14 +88,6 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: avatar_artista
-    third_party_settings: {  }
-  field_titulo:
-    type: string_textfield
-    weight: 10
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select
@@ -158,4 +141,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  feeds_item: true

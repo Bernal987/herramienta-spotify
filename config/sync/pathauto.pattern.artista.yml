@@ -7,12 +7,12 @@ dependencies:
 id: artista
 label: Artista
 type: 'canonical_entities:node'
-pattern: 'artista/[node:title]'
+pattern: '/musica/artista/[node:title]'
 selection_criteria:
-  0b7c9fb9-522d-4648-b666-5a586958de1b:
+  3e45d99b-9d6b-4801-a814-e76f796cc727:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 0b7c9fb9-522d-4648-b666-5a586958de1b
+    uuid: 3e45d99b-9d6b-4801-a814-e76f796cc727
     context_mapping:
       node: node
     bundles:

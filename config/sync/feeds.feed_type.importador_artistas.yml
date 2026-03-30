@@ -1,0 +1,83 @@
+uuid: 8bc7078e-2c1e-46c6-bd3a-3a403d704290
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.artista.title
+    - field.field.node.artista.body
+    - field.field.node.artista.field_genero
+    - node.type.artista
+  module:
+    - node
+label: 'Importador artistas '
+id: importador_artistas
+description: ''
+help: ''
+import_period: 3600
+import_period_per_feed: false
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'public://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: artista
+  langcode: es
+  insert_new: 1
+  update_existing: 0
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  title:
+    value: title
+    label: title
+    machine_name: title
+    type: csv
+  body:
+    value: body
+    label: body
+    machine_name: body
+    type: csv
+  field_genero:
+    value: field_genero
+    label: field_genero
+    machine_name: field_genero
+    type: csv
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: ''
+    unique: {  }
+  -
+    target: body
+    map:
+      value: body
+      summary: ''
+    settings:
+      language: null
+      format: plain_text
+  -
+    target: field_genero
+    map:
+      target_id: field_genero
+    settings:
+      language: ''
+      reference_by: name
+      autocreate: 1
+      autocreate_bundle: generos

@@ -3,29 +3,20 @@ langcode: es
 status: true
 dependencies:
   module:
-    - language
     - node
 id: cancion
 label: Canción
 type: 'canonical_entities:node'
-pattern: 'cancion/[node:title]'
+pattern: '/musica/artistas/[node:field_artista_ref:entity:title]/canciones/[node:title]'
 selection_criteria:
-  3f5d539e-4e92-49c2-9a9b-ea2e8a0c5a15:
+  16d6db02-40d1-4406-b024-1f9dceda2a86:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 3f5d539e-4e92-49c2-9a9b-ea2e8a0c5a15
+    uuid: 16d6db02-40d1-4406-b024-1f9dceda2a86
     context_mapping:
       node: node
     bundles:
       cancion: cancion
-  7e96f15a-a183-41e8-b0ed-42fa7ac0642d:
-    id: language
-    negate: false
-    uuid: 7e96f15a-a183-41e8-b0ed-42fa7ac0642d
-    context_mapping:
-      language: 'node:langcode:language'
-    langcodes:
-      es: es
 selection_logic: and
 weight: -5
 relationships:

@@ -1,0 +1,28 @@
+uuid: a017d1b2-9115-44e3-90f2-388f5b29c0c9
+langcode: es
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - olivero
+id: olivero_alternadordeidioma
+theme: olivero
+region: header
+weight: 0
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Alternador de idioma'
+  label_display: visible
+  provider: language
+visibility:
+  language:
+    id: language
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'
+    langcodes:
+      en: en
+      es: es

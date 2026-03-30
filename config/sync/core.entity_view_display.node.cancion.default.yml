@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_display.comment.comment.default
     - field.field.node.cancion.body
-    - field.field.node.cancion.field_album
+    - field.field.node.cancion.feeds_item
     - field.field.node.cancion.field_archivo_audio
     - field.field.node.cancion.field_artista_ref
     - field.field.node.cancion.field_comentarios
@@ -54,14 +54,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 3
-    region: content
-  field_album:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 9
     region: content
   field_archivo_audio:
     type: file_audio
@@ -152,4 +144,5 @@ content:
     weight: 2
     region: content
 hidden:
+  feeds_item: true
   langcode: true

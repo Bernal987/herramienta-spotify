@@ -19,6 +19,7 @@
         "drupal/core-composer-scaffold": "^10.6",
         "drupal/core-project-message": "^10.6",
         "drupal/core-recommended": "^10.6",
+        "drupal/feeds": "^3.2",
         "drupal/field_group": "^4.0",
         "drupal/field_permissions": "^1.5",
         "drupal/gin": "^4.1",

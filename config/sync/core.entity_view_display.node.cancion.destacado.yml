@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.destacado
     - field.field.node.cancion.body
-    - field.field.node.cancion.field_album
+    - field.field.node.cancion.feeds_item
     - field.field.node.cancion.field_archivo_audio
     - field.field.node.cancion.field_artista_ref
     - field.field.node.cancion.field_comentarios
@@ -49,7 +49,7 @@ content:
     weight: 100
     region: content
 hidden:
-  field_album: true
+  feeds_item: true
   field_archivo_audio: true
   field_artista_ref: true
   field_comentarios: true

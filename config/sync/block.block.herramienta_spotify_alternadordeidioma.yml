@@ -1,0 +1,28 @@
+uuid: d860c537-8c0f-4d02-9745-433356c2caa8
+langcode: es
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - herramienta_spotify
+id: herramienta_spotify_alternadordeidioma
+theme: herramienta_spotify
+region: header
+weight: 0
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Alternador de idioma'
+  label_display: visible
+  provider: language
+visibility:
+  language:
+    id: language
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'
+    langcodes:
+      en: en
+      es: es

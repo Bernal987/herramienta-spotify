@@ -7,12 +7,12 @@ dependencies:
 id: album
 label: Álbum
 type: 'canonical_entities:node'
-pattern: 'album/[node:title]'
+pattern: '/musica/artistas/[node:field_artista_ref:entity:title]/[node:title]'
 selection_criteria:
-  e69e9441-a4a1-4292-a61b-bed5632fe742:
+  f7233944-0201-4cf5-9780-39fcd1d0454b:
     id: 'entity_bundle:node'
     negate: false
-    uuid: e69e9441-a4a1-4292-a61b-bed5632fe742
+    uuid: f7233944-0201-4cf5-9780-39fcd1d0454b
     context_mapping:
       node: node
     bundles:

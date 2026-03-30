@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.album.body
     - field.field.node.album.field_ano
     - field.field.node.album.field_artista_ref
+    - field.field.node.album.field_canciones
     - field.field.node.album.field_fecha_de_lanzamiento
     - field.field.node.album.field_image
     - field.field.node.album.field_portada
@@ -36,6 +37,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 110
+    region: content
+  field_canciones:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_fecha_de_lanzamiento:
     type: datetime_default

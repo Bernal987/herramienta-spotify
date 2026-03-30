@@ -5,10 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.artista.body
-    - field.field.node.artista.field_descripcion
+    - field.field.node.artista.feeds_item
     - field.field.node.artista.field_genero
     - field.field.node.artista.field_image
-    - field.field.node.artista.field_titulo
     - image.style.medium
     - node.type.artista
   module:
@@ -53,6 +52,5 @@ content:
     weight: 100
     region: content
 hidden:
-  field_descripcion: true
-  field_titulo: true
+  feeds_item: true
   langcode: true

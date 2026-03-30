@@ -1,0 +1,150 @@
+uuid: af3d0f7e-da72-4110-9b87-79c05c7f4e64
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.cancion.title
+    - field.field.node.cancion.body
+    - field.field.node.cancion.field_artista_ref
+    - field.field.node.cancion.field_destacado
+    - field.field.node.cancion.field_duracion
+    - field.field.node.cancion.field_fecha_de_lanzamiento
+    - field.field.node.cancion.field_genero
+    - field.field.node.cancion.field_numero_de_descargas
+    - node.type.cancion
+  module:
+    - node
+label: 'Importar cancion'
+id: importar_cancion
+description: ''
+help: ''
+import_period: 3600
+import_period_per_feed: false
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'public://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: cancion
+  langcode: es
+  insert_new: 1
+  update_existing: 0
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  title:
+    value: title
+    label: title
+    machine_name: title
+    type: csv
+  body:
+    value: body
+    label: body
+    machine_name: body
+    type: csv
+  field_artista_ref:
+    value: field_artista_ref
+    label: field_artista_ref
+    machine_name: field_artista_ref
+    type: csv
+  field_destacado:
+    value: field_destacado
+    label: field_destacado
+    machine_name: field_destacado
+    type: csv
+  field_duracion:
+    value: field_duracion
+    label: field_duracion
+    machine_name: field_duracion
+    type: csv
+  field_genero:
+    value: field_genero
+    label: field_genero
+    machine_name: field_genero
+    type: csv
+  field_fecha_de_lanzamiento:
+    value: field_fecha_de_lanzamiento
+    label: field_fecha_de_lanzamiento
+    machine_name: field_fecha_de_lanzamiento
+    type: csv
+  field_numero_de_descargas:
+    value: field_numero_de_descargas
+    label: field_numero_de_descargas
+    machine_name: field_numero_de_descargas
+    type: csv
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: body
+    map:
+      value: body
+      summary: ''
+    settings:
+      language: null
+      format: plain_text
+  -
+    target: field_artista_ref
+    map:
+      target_id: field_artista_ref
+    settings:
+      language: ''
+      reference_by: title
+      feeds_item: guid
+      autocreate: 0
+      autocreate_bundle: artista
+  -
+    target: field_destacado
+    map:
+      value: field_destacado
+    settings:
+      language: null
+  -
+    target: field_duracion
+    map:
+      value: field_duracion
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_genero
+    map:
+      target_id: field_genero
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: generos
+  -
+    target: field_fecha_de_lanzamiento
+    map:
+      value: field_fecha_de_lanzamiento
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: field_numero_de_descargas
+    map:
+      value: field_numero_de_descargas
+    settings:
+      language: null
+    unique: {  }

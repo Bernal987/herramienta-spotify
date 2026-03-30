@@ -4,10 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.node.artista.body
-    - field.field.node.artista.field_descripcion
+    - field.field.node.artista.feeds_item
     - field.field.node.artista.field_genero
     - field.field.node.artista.field_image
-    - field.field.node.artista.field_titulo
     - image.style.wide
     - node.type.artista
   module:
@@ -25,14 +24,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 4
-    region: content
-  field_descripcion:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
     region: content
   field_genero:
     type: entity_reference_label
@@ -53,18 +44,11 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  field_titulo:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 3
     region: content
 hidden:
+  feeds_item: true
   langcode: true
