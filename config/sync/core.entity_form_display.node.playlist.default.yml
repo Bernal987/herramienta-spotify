@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.playlist.body
+    - field.field.node.playlist.feeds_item
     - field.field.node.playlist.field_canciones
     - field.field.node.playlist.field_descripcion
     - field.field.node.playlist.field_privacidad
@@ -118,4 +119,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  feeds_item: true

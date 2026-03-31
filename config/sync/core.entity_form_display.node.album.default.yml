@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.album.body
+    - field.field.node.album.feeds_item
     - field.field.node.album.field_ano
     - field.field.node.album.field_artista_ref
     - field.field.node.album.field_canciones
@@ -183,4 +184,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  feeds_item: true

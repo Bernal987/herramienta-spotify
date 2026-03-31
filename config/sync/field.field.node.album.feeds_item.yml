@@ -1,0 +1,23 @@
+uuid: b495937a-2775-426f-a32b-11563576c937
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.feeds_item
+    - node.type.album
+  module:
+    - feeds
+id: node.album.feeds_item
+field_name: feeds_item
+entity_type: node
+bundle: album
+label: 'Feeds item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:feeds_feed'
+  handler_settings: {  }
+field_type: feeds_item

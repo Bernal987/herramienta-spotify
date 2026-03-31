@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.album.body
+    - field.field.node.album.feeds_item
     - field.field.node.album.field_ano
     - field.field.node.album.field_artista_ref
     - field.field.node.album.field_canciones
@@ -92,4 +93,5 @@ content:
     region: content
 hidden:
   body: true
+  feeds_item: true
   langcode: true

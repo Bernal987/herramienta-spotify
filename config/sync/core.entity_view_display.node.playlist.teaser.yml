@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.playlist.body
+    - field.field.node.playlist.feeds_item
     - field.field.node.playlist.field_canciones
     - field.field.node.playlist.field_descripcion
     - field.field.node.playlist.field_privacidad
@@ -32,6 +33,7 @@ content:
     weight: 100
     region: content
 hidden:
+  feeds_item: true
   field_canciones: true
   field_descripcion: true
   field_privacidad: true

@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.card
     - field.field.node.cancion.body
     - field.field.node.cancion.feeds_item
+    - field.field.node.cancion.field_album
     - field.field.node.cancion.field_archivo_audio
     - field.field.node.cancion.field_artista_ref
     - field.field.node.cancion.field_comentarios
@@ -94,6 +95,7 @@ content:
     region: content
 hidden:
   feeds_item: true
+  field_album: true
   field_archivo_audio: true
   field_comentarios: true
   field_numero_de_descargas: true

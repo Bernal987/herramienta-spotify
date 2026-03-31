@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.destacado
     - field.field.node.album.body
+    - field.field.node.album.feeds_item
     - field.field.node.album.field_ano
     - field.field.node.album.field_artista_ref
     - field.field.node.album.field_canciones
@@ -39,6 +40,7 @@ content:
     region: content
 hidden:
   body: true
+  feeds_item: true
   field_ano: true
   field_artista_ref: true
   field_canciones: true

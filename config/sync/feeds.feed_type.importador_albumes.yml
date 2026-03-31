@@ -1,16 +1,18 @@
-uuid: 8bc7078e-2c1e-46c6-bd3a-3a403d704290
+uuid: 6eeaefae-2d7d-4459-a757-b2865ecc48c6
 langcode: es
 status: true
 dependencies:
   config:
-    - core.base_field_override.node.artista.title
-    - field.field.node.artista.body
-    - field.field.node.artista.field_genero
-    - node.type.artista
+    - core.base_field_override.node.album.title
+    - field.field.node.album.body
+    - field.field.node.album.field_artista_ref
+    - field.field.node.album.field_canciones
+    - field.field.node.album.field_fecha_de_lanzamiento
+    - node.type.album
   module:
     - node
-label: 'Importador artistas '
-id: importador_artistas
+label: 'Importador álbumes'
+id: importador_albumes
 description: ''
 help: ''
 import_period: 3600
@@ -27,7 +29,7 @@ parser_configuration:
 processor: 'entity:node'
 processor_configuration:
   values:
-    type: artista
+    type: album
   langcode: es
   insert_new: 1
   update_existing: 0
@@ -46,15 +48,10 @@ custom_sources:
     label: title
     machine_name: title
     type: csv
-  body:
-    value: body
-    label: body
-    machine_name: body
-    type: csv
-  field_genero:
-    value: field_genero
-    label: field_genero
-    machine_name: field_genero
+  '':
+    value: ''
+    label: ''
+    machine_name: ''
     type: csv
 mappings:
   -
@@ -62,22 +59,40 @@ mappings:
     map:
       value: title
     settings:
-      language: ''
+      language: null
     unique: {  }
   -
     target: body
     map:
-      value: body
+      value: ''
       summary: ''
     settings:
       language: null
       format: plain_text
   -
-    target: field_genero
+    target: field_artista_ref
     map:
-      target_id: field_genero
+      target_id: ''
     settings:
-      language: ''
-      reference_by: name
-      autocreate: 1
-      autocreate_bundle: generos
+      language: null
+      reference_by: title
+      feeds_item: false
+      autocreate: false
+      autocreate_bundle: artista
+  -
+    target: field_canciones
+    map:
+      target_id: ''
+    settings:
+      language: null
+      reference_by: title
+      feeds_item: false
+      autocreate: false
+      autocreate_bundle: cancion
+  -
+    target: field_fecha_de_lanzamiento
+    map:
+      value: ''
+    settings:
+      language: null
+      timezone: UTC

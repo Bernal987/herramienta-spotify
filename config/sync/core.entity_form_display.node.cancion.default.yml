@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.cancion.body
     - field.field.node.cancion.feeds_item
+    - field.field.node.cancion.field_album
     - field.field.node.cancion.field_archivo_audio
     - field.field.node.cancion.field_artista_ref
     - field.field.node.cancion.field_comentarios
@@ -82,6 +83,16 @@ content:
     weight: 12
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_album:
+    type: entity_reference_autocomplete
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_archivo_audio:
     type: file_generic
