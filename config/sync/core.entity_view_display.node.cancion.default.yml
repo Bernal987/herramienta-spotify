@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.cancion.field_comentarios
     - field.field.node.cancion.field_destacado
     - field.field.node.cancion.field_duracion
+    - field.field.node.cancion.field_favoritos
     - field.field.node.cancion.field_fecha_de_lanzamiento
     - field.field.node.cancion.field_genero
     - field.field.node.cancion.field_numero_de_descargas
@@ -109,6 +110,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_favoritos:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 13
     region: content
   field_fecha_de_lanzamiento:
     type: datetime_default

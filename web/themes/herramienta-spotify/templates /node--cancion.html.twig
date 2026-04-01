@@ -68,7 +68,9 @@
 
     document.querySelectorAll('.btn-fav').forEach(btn => {
 
-      btn.addEventListener('click', function () {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
 
         const nodeId = this.dataset.nodeId;
 
@@ -83,8 +85,14 @@
 
             if (data.estado === 'ok') {
               this.classList.toggle('activo');
-              this.querySelector('.fav-icon').textContent =
-                this.classList.contains('activo') ? '❤️' : '🤍';
+
+              const icon = this.querySelector('.fav-icon');
+
+              if (this.classList.contains('activo')) {
+                icon.textContent = '❤️';
+              } else {
+                icon.textContent = '🤍';
+              }
             }
 
           });

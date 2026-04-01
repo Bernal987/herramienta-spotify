@@ -1,0 +1,34 @@
+uuid: 78b1f4e3-52cb-49d1-b77e-7ba2c48ce2ef
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_favoritos
+    - node.type.album
+    - node.type.artista
+    - node.type.cancion
+    - node.type.playlist
+id: node.cancion.field_favoritos
+field_name: field_favoritos
+entity_type: node
+bundle: cancion
+label: favoritos
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      artista: artista
+      cancion: cancion
+      playlist: playlist
+      album: album
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: cancion
+field_type: entity_reference

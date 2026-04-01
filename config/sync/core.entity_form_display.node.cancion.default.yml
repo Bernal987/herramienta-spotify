@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.cancion.field_comentarios
     - field.field.node.cancion.field_destacado
     - field.field.node.cancion.field_duracion
+    - field.field.node.cancion.field_favoritos
     - field.field.node.cancion.field_fecha_de_lanzamiento
     - field.field.node.cancion.field_genero
     - field.field.node.cancion.field_numero_de_descargas
@@ -125,6 +126,16 @@ content:
     weight: 5
     region: content
     settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_favoritos:
+    type: entity_reference_autocomplete
+    weight: 27
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }

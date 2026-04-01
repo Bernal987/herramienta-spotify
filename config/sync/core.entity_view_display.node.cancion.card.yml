@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.cancion.field_comentarios
     - field.field.node.cancion.field_destacado
     - field.field.node.cancion.field_duracion
+    - field.field.node.cancion.field_favoritos
     - field.field.node.cancion.field_fecha_de_lanzamiento
     - field.field.node.cancion.field_genero
     - field.field.node.cancion.field_numero_de_descargas
@@ -98,5 +99,6 @@ hidden:
   field_album: true
   field_archivo_audio: true
   field_comentarios: true
+  field_favoritos: true
   field_numero_de_descargas: true
   langcode: true
