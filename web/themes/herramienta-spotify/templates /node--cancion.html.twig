@@ -47,12 +47,18 @@
 
   <!-- FAVORITO -->
   {% if logged_in %}
+
     <div
-      class="btn-fav"
+      class="btn-fav {{ es_favorito ? 'activo' : '' }}"
       data-node-id="{{ node.id() }}"
       style="position:absolute; top:10px; right:10px; font-size:18px; cursor:pointer;">
-      <span class="fav-icon">🤍</span>
+
+      <span class="fav-icon">
+        {{ es_favorito ? '❤️' : '🤍' }}
+      </span>
+
     </div>
+
   {% endif %}
 
 </article>
@@ -83,16 +89,16 @@
           .then(res => res.json())
           .then(data => {
 
-            if (data.estado === 'ok') {
-              this.classList.toggle('activo');
+            const icon = this.querySelector('.fav-icon');
 
-              const icon = this.querySelector('.fav-icon');
+            if (data.estado === 'añadido') {
+              this.classList.add('activo');
+              icon.textContent = '❤️';
+            }
 
-              if (this.classList.contains('activo')) {
-                icon.textContent = '❤️';
-              } else {
-                icon.textContent = '🤍';
-              }
+            if (data.estado === 'eliminado') {
+              this.classList.remove('activo');
+              icon.textContent = '🤍';
             }
 
           });
