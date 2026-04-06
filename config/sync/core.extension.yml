@@ -19,6 +19,7 @@ module:
   editor: 0
   favoritos: 0
   feeds: 0
+  feeds_tamper: 0
   field: 0
   field_group: 0
   field_permissions: 0
@@ -34,6 +35,7 @@ module:
   locale: 0
   menu_link_content: 0
   menu_ui: 0
+  metatag: 0
   mysql: 0
   node: 0
   options: 0
@@ -43,6 +45,7 @@ module:
   search: 0
   shortcut: 0
   system: 0
+  tamper: 0
   taxonomy: 0
   text: 0
   token: 0
@@ -52,6 +55,7 @@ module:
   user: 0
   views_ui: 0
   webform: 0
+  yoast_seo: 0
   pathauto: 1
   content_translation: 10
   views: 10

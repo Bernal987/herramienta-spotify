@@ -8,7 +8,19 @@ dependencies:
     - field.field.node.playlist.field_canciones
     - node.type.playlist
   module:
+    - feeds_tamper
     - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      074883d8-bfe0-4b5c-aaad-f623b504d3b6:
+        separator: ', '
+        limit: null
+        uuid: 074883d8-bfe0-4b5c-aaad-f623b504d3b6
+        plugin: explode
+        source: field_canciones
+        weight: 0
+        label: Explode
 label: 'Importador de playlist'
 id: importador_de_playlist
 description: ''
@@ -51,6 +63,16 @@ custom_sources:
     label: ''
     machine_name: ''
     type: csv
+  body:
+    value: body
+    label: body
+    machine_name: body
+    type: csv
+  field_canciones:
+    value: field_canciones
+    label: field_canciones
+    machine_name: field_canciones
+    type: csv
 mappings:
   -
     target: title
@@ -62,7 +84,7 @@ mappings:
   -
     target: body
     map:
-      value: ''
+      value: body
       summary: ''
     settings:
       language: null
@@ -70,7 +92,7 @@ mappings:
   -
     target: field_canciones
     map:
-      target_id: ''
+      target_id: field_canciones
     settings:
       language: null
       reference_by: title

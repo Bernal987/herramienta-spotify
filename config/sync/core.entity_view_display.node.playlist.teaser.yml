@@ -7,11 +7,13 @@ dependencies:
     - field.field.node.playlist.body
     - field.field.node.playlist.feeds_item
     - field.field.node.playlist.field_canciones
-    - field.field.node.playlist.field_descripcion
+    - field.field.node.playlist.field_image
     - field.field.node.playlist.field_privacidad
-    - field.field.node.playlist.field_titulo
+    - field.field.node.playlist.field_seo
+    - image.style.medium
     - node.type.playlist
   module:
+    - image
     - text
     - user
 id: node.playlist.teaser
@@ -27,6 +29,17 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: -1
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -35,7 +48,6 @@ content:
 hidden:
   feeds_item: true
   field_canciones: true
-  field_descripcion: true
   field_privacidad: true
-  field_titulo: true
+  field_seo: true
   langcode: true

@@ -1,0 +1,21 @@
+uuid: 7d1211e6-41a3-471d-a6a6-2f983c876e55
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_seo
+    - node.type.artista
+  module:
+    - yoast_seo
+id: node.artista.field_seo
+field_name: field_seo
+entity_type: node
+bundle: artista
+label: Seo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: yoast_seo

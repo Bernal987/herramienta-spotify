@@ -7,12 +7,14 @@ dependencies:
     - field.field.node.artista.feeds_item
     - field.field.node.artista.field_genero
     - field.field.node.artista.field_image
-    - image.style.wide
+    - field.field.node.artista.field_seo
+    - image.style.banner_artista
     - node.type.artista
   module:
     - image
     - text
     - user
+    - yoast_seo
 id: node.artista.default
 targetEntityType: node
 bundle: artista
@@ -38,11 +40,18 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: wide
+      image_style: banner_artista
       image_loading:
         attribute: eager
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_seo:
+    type: yoastseo_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 14
     region: content
   links:
     settings: {  }

@@ -14,8 +14,10 @@ dependencies:
     - field.field.node.cancion.field_favoritos
     - field.field.node.cancion.field_fecha_de_lanzamiento
     - field.field.node.cancion.field_genero
+    - field.field.node.cancion.field_image
     - field.field.node.cancion.field_numero_de_descargas
     - field.field.node.cancion.field_portada
+    - field.field.node.cancion.field_seo
     - image.style.thumbnail
     - node.type.cancion
   module:
@@ -26,6 +28,7 @@ dependencies:
     - image
     - path
     - text
+    - yoast_seo
 third_party_settings:
   field_group:
     group_organizador:
@@ -48,9 +51,9 @@ third_party_settings:
         - field_portada
         - title
         - field_artista_ref
-        - field_album
         - field_genero
         - field_fecha_de_lanzamiento
+        - field_album
       label: 'Información básica'
       region: content
       parent_name: group_organizador
@@ -155,6 +158,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: card_album
+    third_party_settings: {  }
   field_numero_de_descargas:
     type: number
     weight: 19
@@ -169,6 +180,16 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_seo:
+    type: yoast_seo_widget
+    weight: 28
+    region: content
+    settings:
+      edit_title: true
+      edit_description: true
+      render_theme: olivero
+      render_view_mode: default
     third_party_settings: {  }
   langcode:
     type: language_select

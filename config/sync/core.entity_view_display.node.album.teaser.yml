@@ -12,7 +12,7 @@ dependencies:
     - field.field.node.album.field_fecha_de_lanzamiento
     - field.field.node.album.field_image
     - field.field.node.album.field_portada
-    - field.field.node.album.field_titulo
+    - field.field.node.album.field_seo
     - node.type.album
   module:
     - datetime
@@ -80,5 +80,5 @@ hidden:
   feeds_item: true
   field_ano: true
   field_canciones: true
-  field_titulo: true
+  field_seo: true
   langcode: true

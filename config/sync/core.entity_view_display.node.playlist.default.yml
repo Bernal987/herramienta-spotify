@@ -6,13 +6,16 @@ dependencies:
     - field.field.node.playlist.body
     - field.field.node.playlist.feeds_item
     - field.field.node.playlist.field_canciones
-    - field.field.node.playlist.field_descripcion
+    - field.field.node.playlist.field_image
     - field.field.node.playlist.field_privacidad
-    - field.field.node.playlist.field_titulo
+    - field.field.node.playlist.field_seo
+    - image.style.avatar_artista
     - node.type.playlist
   module:
+    - image
     - text
     - user
+    - yoast_seo
 id: node.playlist.default
 targetEntityType: node
 bundle: playlist
@@ -33,13 +36,16 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_descripcion:
-    type: string
-    label: above
+  field_image:
+    type: image
+    label: hidden
     settings:
-      link_to_entity: false
+      image_link: ''
+      image_style: avatar_artista
+      image_loading:
+        attribute: eager
     third_party_settings: {  }
-    weight: 4
+    weight: -1
     region: content
   field_privacidad:
     type: boolean
@@ -51,13 +57,12 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  field_titulo:
-    type: string
+  field_seo:
+    type: yoastseo_empty_formatter
     label: above
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 14
     region: content
   links:
     settings: {  }

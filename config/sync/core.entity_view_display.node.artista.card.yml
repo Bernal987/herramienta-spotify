@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.artista.feeds_item
     - field.field.node.artista.field_genero
     - field.field.node.artista.field_image
+    - field.field.node.artista.field_seo
     - node.type.artista
   module:
     - image
@@ -44,4 +45,5 @@ content:
 hidden:
   body: true
   feeds_item: true
+  field_seo: true
   langcode: true

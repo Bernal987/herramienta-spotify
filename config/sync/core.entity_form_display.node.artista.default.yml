@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.artista.feeds_item
     - field.field.node.artista.field_genero
     - field.field.node.artista.field_image
+    - field.field.node.artista.field_seo
     - image.style.avatar_artista
     - node.type.artista
   module:
@@ -14,16 +15,17 @@ dependencies:
     - image
     - path
     - text
+    - yoast_seo
 third_party_settings:
   field_group:
     group_organizacion_del_contenido:
       children:
-        - title
         - group_informacion_basica
+        - group_categorias
       label: 'Organización del contenido'
       region: content
       parent_name: ''
-      weight: 0
+      weight: 1
       format_type: tabs
       format_settings:
         classes: ''
@@ -34,13 +36,28 @@ third_party_settings:
         width_breakpoint: 640
     group_informacion_basica:
       children:
-        - uid
         - field_image
-        - field_descripcion
+        - body
       label: 'Información básica'
-      region: hidden
+      region: content
       parent_name: group_organizacion_del_contenido
-      weight: 1
+      weight: 13
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_categorias:
+      children:
+        - field_genero
+      label: Categorías
+      region: content
+      parent_name: group_organizacion_del_contenido
+      weight: 20
       format_type: tab
       format_settings:
         classes: ''
@@ -57,7 +74,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 9
+    weight: 5
     region: content
     settings:
       rows: 9
@@ -83,11 +100,21 @@ content:
     third_party_settings: {  }
   field_image:
     type: image_image
-    weight: 2
+    weight: 4
     region: content
     settings:
       progress_indicator: throbber
       preview_image_style: avatar_artista
+    third_party_settings: {  }
+  field_seo:
+    type: yoast_seo_widget
+    weight: 11
+    region: content
+    settings:
+      edit_title: true
+      edit_description: true
+      render_theme: olivero
+      render_view_mode: default
     third_party_settings: {  }
   langcode:
     type: language_select
@@ -98,34 +125,34 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 7
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 5
+    weight: 7
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 8
+    weight: 10
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 6
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 3
+    weight: 0
     region: content
     settings:
       size: 60
@@ -133,7 +160,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 1
+    weight: 6
     region: content
     settings:
       match_operator: CONTAINS

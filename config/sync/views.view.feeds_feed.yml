@@ -10,7 +10,7 @@ dependencies:
 _core:
   default_config_hash: RbZ1xJz3BHNcfMQFvqYZv7O41f32c4ERI3DiwNKyss4
 id: feeds_feed
-label: Feeds
+label: 'Canales de noticias'
 module: views
 description: ''
 tag: ''
@@ -23,7 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Feeds
+      title: 'Canales de noticias'
       fields:
         feeds_feed_bulk_form:
           id: feeds_feed_bulk_form
@@ -738,7 +738,7 @@ display:
       path: admin/content/feed
       menu:
         type: normal
-        title: Feeds
+        title: 'Canales de noticias'
         description: ''
         weight: 0
         expanded: false

@@ -1,19 +1,21 @@
-uuid: 706408fc-d461-485e-9102-921812938689
+uuid: 3b34d3d5-7028-48e0-97e8-23c27685b3e9
 langcode: es
 status: true
 dependencies:
   config:
-    - field.storage.node.field_titulo
+    - field.storage.node.field_seo
     - node.type.playlist
-id: node.playlist.field_titulo
-field_name: field_titulo
+  module:
+    - yoast_seo
+id: node.playlist.field_seo
+field_name: field_seo
 entity_type: node
 bundle: playlist
-label: Título
+label: Seo
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: yoast_seo

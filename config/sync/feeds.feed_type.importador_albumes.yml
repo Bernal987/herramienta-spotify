@@ -10,7 +10,19 @@ dependencies:
     - field.field.node.album.field_fecha_de_lanzamiento
     - node.type.album
   module:
+    - feeds_tamper
     - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      2a75709f-c72f-44d8-b1ce-a0bf15a3041a:
+        separator: ', '
+        limit: null
+        uuid: 2a75709f-c72f-44d8-b1ce-a0bf15a3041a
+        plugin: explode
+        source: field_canciones
+        weight: 0
+        label: Explode
 label: 'Importador álbumes'
 id: importador_albumes
 description: ''
@@ -53,6 +65,26 @@ custom_sources:
     label: ''
     machine_name: ''
     type: csv
+  body:
+    value: body
+    label: body
+    machine_name: body
+    type: csv
+  field_artista_ref:
+    value: field_artista_ref
+    label: field_artista_ref
+    machine_name: field_artista_ref
+    type: csv
+  field_canciones:
+    value: field_canciones
+    label: field_canciones
+    machine_name: field_canciones
+    type: csv
+  field_fecha_de_lanzamiento:
+    value: field_fecha_de_lanzamiento
+    label: field_fecha_de_lanzamiento
+    machine_name: field_fecha_de_lanzamiento
+    type: csv
 mappings:
   -
     target: title
@@ -64,7 +96,7 @@ mappings:
   -
     target: body
     map:
-      value: ''
+      value: body
       summary: ''
     settings:
       language: null
@@ -72,7 +104,7 @@ mappings:
   -
     target: field_artista_ref
     map:
-      target_id: ''
+      target_id: field_artista_ref
     settings:
       language: null
       reference_by: title
@@ -82,7 +114,7 @@ mappings:
   -
     target: field_canciones
     map:
-      target_id: ''
+      target_id: field_canciones
     settings:
       language: null
       reference_by: title
@@ -92,7 +124,7 @@ mappings:
   -
     target: field_fecha_de_lanzamiento
     map:
-      value: ''
+      value: field_fecha_de_lanzamiento
     settings:
       language: null
       timezone: UTC

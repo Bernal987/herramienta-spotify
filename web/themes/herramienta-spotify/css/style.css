@@ -196,3 +196,6 @@ body {
 .language-switcher-language-url .block-title {
   display: none !important;
 }
+.btn-fav.activo .fav-icon {
+  color: red;
+}

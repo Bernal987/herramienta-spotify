@@ -1,18 +1,16 @@
-uuid: 083315da-9a02-49e4-8f70-44a077756534
+uuid: 11ec2a9f-7bee-4e2e-b911-a2d79afe3f2b
 langcode: es
 status: true
 dependencies:
   module:
     - node
-id: node.field_titulo
-field_name: field_titulo
+    - yoast_seo
+id: node.field_seo
+field_name: field_seo
 entity_type: node
-type: string
-settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
-module: core
+type: yoast_seo
+settings: {  }
+module: yoast_seo
 locked: false
 cardinality: 1
 translatable: true

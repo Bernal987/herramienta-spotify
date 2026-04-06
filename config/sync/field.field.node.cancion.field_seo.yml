@@ -1,0 +1,21 @@
+uuid: c7e798ea-8910-49eb-beef-9e688078c917
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_seo
+    - node.type.cancion
+  module:
+    - yoast_seo
+id: node.cancion.field_seo
+field_name: field_seo
+entity_type: node
+bundle: cancion
+label: Seo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: yoast_seo

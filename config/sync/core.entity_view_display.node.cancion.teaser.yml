@@ -16,8 +16,10 @@ dependencies:
     - field.field.node.cancion.field_favoritos
     - field.field.node.cancion.field_fecha_de_lanzamiento
     - field.field.node.cancion.field_genero
+    - field.field.node.cancion.field_image
     - field.field.node.cancion.field_numero_de_descargas
     - field.field.node.cancion.field_portada
+    - field.field.node.cancion.field_seo
     - node.type.cancion
   module:
     - comment
@@ -102,6 +104,17 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: -1
+    region: content
   field_portada:
     type: image
     label: hidden
@@ -123,4 +136,5 @@ hidden:
   field_album: true
   field_favoritos: true
   field_numero_de_descargas: true
+  field_seo: true
   langcode: true

@@ -6,13 +6,16 @@ dependencies:
     - field.field.node.playlist.body
     - field.field.node.playlist.feeds_item
     - field.field.node.playlist.field_canciones
-    - field.field.node.playlist.field_descripcion
+    - field.field.node.playlist.field_image
     - field.field.node.playlist.field_privacidad
-    - field.field.node.playlist.field_titulo
+    - field.field.node.playlist.field_seo
+    - image.style.card_album
     - node.type.playlist
   module:
+    - image
     - path
     - text
+    - yoast_seo
 id: node.playlist.default
 targetEntityType: node
 bundle: playlist
@@ -44,13 +47,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_descripcion:
-    type: string_textfield
-    weight: 123
+  field_image:
+    type: image_image
+    weight: 1
     region: content
     settings:
-      size: 60
-      placeholder: ''
+      progress_indicator: throbber
+      preview_image_style: card_album
     third_party_settings: {  }
   field_privacidad:
     type: boolean_checkbox
@@ -59,13 +62,15 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
-  field_titulo:
-    type: string_textfield
-    weight: 122
+  field_seo:
+    type: yoast_seo_widget
+    weight: 28
     region: content
     settings:
-      size: 60
-      placeholder: ''
+      edit_title: true
+      edit_description: true
+      render_theme: olivero
+      render_view_mode: default
     third_party_settings: {  }
   langcode:
     type: language_select

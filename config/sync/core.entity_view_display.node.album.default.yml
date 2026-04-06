@@ -11,12 +11,13 @@ dependencies:
     - field.field.node.album.field_fecha_de_lanzamiento
     - field.field.node.album.field_image
     - field.field.node.album.field_portada
-    - field.field.node.album.field_titulo
+    - field.field.node.album.field_seo
     - node.type.album
   module:
     - datetime
     - image
     - user
+    - yoast_seo
 id: node.album.default
 targetEntityType: node
 bundle: album
@@ -61,7 +62,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: wide
+      image_style: card_album
       image_loading:
         attribute: eager
     third_party_settings: {  }
@@ -78,13 +79,12 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_titulo:
-    type: string
+  field_seo:
+    type: yoastseo_empty_formatter
     label: above
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 14
     region: content
   links:
     settings: {  }
