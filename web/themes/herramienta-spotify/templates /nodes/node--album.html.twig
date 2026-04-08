@@ -1,0 +1,35 @@
+<article class="album-full">
+
+  <div class="album-header">
+
+    <div class="album-cover">
+      {{ content.field_portada }}
+    </div>
+
+    <div class="album-info">
+      <h1 class="album-title">
+        {{ label }}
+      </h1>
+
+      <div class="album-meta">
+        <span class="album-artist">
+          {{ content.field_artista_ref }}
+        </span>
+
+        <span class="album-date">
+          {{ content.field_fecha_de_lanzamiento }}
+        </span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="album-body">
+    {{ content.body }}
+  </div>
+
+  <div class="album-tracks">
+    {{ content.field_canciones }}
+  </div>
+
+</article>

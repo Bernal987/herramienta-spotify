@@ -327,28 +327,13 @@ display:
             default_group_multiple: {  }
             group_items: {  }
       style:
-        type: table
+        type: grid_responsive
         options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-          columns:
-            title: title
-          default: title
-          info:
-            title:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-          override: true
-          sticky: false
-          summary: ''
-          empty_table: false
-          caption: ''
-          description: ''
+          uses_fields: false
+          columns: 3
+          cell_min_width: 100
+          grid_gutter: 10
+          alignment: horizontal
       row:
         type: 'entity:node'
         options:
@@ -403,6 +388,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      exposed_block: true
       display_extenders: {  }
       path: playlist
     cache_metadata:

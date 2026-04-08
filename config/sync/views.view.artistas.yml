@@ -3,6 +3,7 @@ langcode: es
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.storage.node.field_portada
   module:
     - image
@@ -178,7 +179,7 @@ display:
         type: basic
         options:
           submit_button: Aplicar
-          reset_button: false
+          reset_button: true
           reset_button_label: Restablecer
           exposed_sorts_label: 'Ordenar por'
           expose_sort_order: true
@@ -277,13 +278,10 @@ display:
           grid_gutter: 10
           alignment: horizontal
       row:
-        type: fields
+        type: 'entity:node'
         options:
-          default_field_elements: true
-          inline:
-            title: title
-          separator: ''
-          hide_empty: false
+          relationship: field_artista_ref
+          view_mode: teaser
       query:
         type: views_query
         options:
@@ -322,6 +320,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      exposed_block: true
       display_extenders: {  }
       path: artistas
     cache_metadata:

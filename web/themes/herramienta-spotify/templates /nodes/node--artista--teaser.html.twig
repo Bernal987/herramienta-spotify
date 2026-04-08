@@ -1,0 +1,19 @@
+<div class="artista">
+
+  {% if content.field_imagen %}
+    <div class="artista-imagen">
+      {{ content.field_imagen }}
+    </div>
+  {% endif %}
+
+  <div class="artista-info">
+    <h3 class="artista-nombre">
+      {{ label }}
+    </h3>
+
+    <div class="artista-genero">
+      {{ content.field_genero }}
+    </div>
+  </div>
+
+</div>

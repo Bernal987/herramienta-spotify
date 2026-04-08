@@ -71,25 +71,33 @@ body {
 
 /* TARJETAS */
 .grid-canciones .node {
-  background: linear-gradient(145deg, #1f1f1f, #2a2a2a);
-  border-radius: 12px;
-  padding: 15px;
+  background: linear-gradient(180deg, #181818 0%, #121212 100%);
+  border-radius: 14px;
+  padding: 18px;
   transition: all 0.3s ease;
-  border: 1px solid #3a3a3a;
+  border: 1px solid #2a2a2a;
+  position: relative;
+  overflow: hidden;
 }
 
 /* HOVER TARJETA */
 .grid-canciones .node:hover {
-  background: linear-gradient(145deg, #2a2a2a, #3a3a3a);
-  transform: translateY(-5px);
+  background: linear-gradient(180deg, #1f1f1f 0%, #181818 100%);
+  transform: translateY(-6px) scale(1.02);
+  border-color: #1db954;
 }
 
 /* TITULO DE CANCION */
 .grid-canciones h2 {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 600;
   color: #ffffff;
   margin-bottom: 10px;
+  transition: 0.2s;
+}
+
+.grid-canciones .node:hover h2 {
+  color: #1db954;
 }
 
 /* CAMPOS (genero, duracion, etc) */
@@ -112,14 +120,36 @@ body {
   border-radius: 8px;
   margin-bottom: 10px;
 }
+
+.grid-canciones .node::after {
+  content: "▶";
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: #1db954;
+  color: black;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.3s;
+}
+
+.grid-canciones .node:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* INFO SUPERIOR (genero + duracion) */
 .info-top {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
 }
-
-
 
 
 
@@ -198,4 +228,255 @@ body {
 }
 .btn-fav.activo .fav-icon {
   color: red;
+}
+
+/* ===== ARTISTAS (DISEÑO TARJETAS) ===== */
+.artista {
+  background: linear-gradient(180deg, #181818 0%, #121212 100%);
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 1px solid #2a2a2a;
+}
+
+.artista:hover {
+  background: linear-gradient(180deg, #1f1f1f 0%, #181818 100%);
+  transform: translateY(-6px) scale(1.02);
+  border-color: #1db954;
+}
+
+.artista-imagen img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.artista::after {
+  content: "▶";
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: #1db954;
+  color: black;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.3s;
+}
+
+.artista:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.artista-nombre {
+  color: #ffffff;
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.artista:hover .artista-nombre {
+  color: #1db954;
+}
+
+.views-row {
+  cursor: pointer;
+}
+.artista-info {
+  margin-top: 10px;
+}
+
+.artista-genero {
+  display: inline-block;
+  background: #1db954;
+  color: black;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.artista-descripcion {
+  color: #b3b3b3;
+  font-size: 13px;
+  margin-top: 10px;
+}
+.views-view-unformatted {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+.album {
+  background: #181818;
+  padding: 15px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.album:hover {
+  background: #282828;
+  transform: translateY(-5px);
+}
+
+.album-imagen img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.album-artista {
+  color: #b3b3b3;
+  font-size: 14px;
+}
+/* GRID */
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* TARJETA */
+/* TARJETA */
+.album-card {
+  background: linear-gradient(180deg, #181818 0%, #121212 100%);
+  border-radius: 14px;
+  padding: 18px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #2a2a2a;
+}
+
+.album-card:hover {
+  background: linear-gradient(180deg, #1f1f1f 0%, #181818 100%);
+  transform: translateY(-6px) scale(1.02);
+  border-color: #1db954;
+}
+
+/* IMAGEN */
+.album-img img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.album-card::after {
+  content: "▶";
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #1db954;
+  color: black;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.3s;
+}
+
+.album-card:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* TEXTO */
+.album-title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.album-meta {
+  color: #b3b3b3;
+  margin-top: 10px;
+}
+
+.album-body {
+  margin-top: 20px;
+}
+
+.album-tracks {
+  margin-top: 30px;
+}
+.grid-playlist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.playlist-card {
+  background: linear-gradient(180deg, #181818 0%, #121212 100%);
+  padding: 18px;
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #2a2a2a;
+}
+
+.playlist-card:hover {
+  background: linear-gradient(180deg, #1f1f1f 0%, #181818 100%);
+  transform: translateY(-6px) scale(1.02);
+  border-color: #1db954;
+}
+
+.playlist-img img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* OVERLAY PLAY */
+.playlist-card::after {
+  content: "▶";
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #1db954;
+  color: black;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.3s;
+}
+
+.playlist-card:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.playlist-info h3 {
+  color: white;
+  font-size: 17px;
+  margin-top: 12px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.playlist-card:hover .playlist-info h3 {
+  color: #1db954;
+}
+
+.playlist-desc {
+  color: #b3b3b3;
+  font-size: 13px;
+  margin-top: 6px;
 }

@@ -26,7 +26,7 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 101
+    weight: 2
     region: content
   field_genero:
     type: entity_reference_label
@@ -45,14 +45,10 @@ content:
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: -1
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   feeds_item: true
   field_seo: true
   langcode: true
+  links: true

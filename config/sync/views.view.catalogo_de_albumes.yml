@@ -3,17 +3,16 @@ langcode: es
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.storage.node.body
     - field.storage.node.field_fecha_de_lanzamiento
     - field.storage.node.field_genero
     - field.storage.node.field_portada
     - node.type.album
-    - taxonomy.vocabulary.generos
   module:
     - datetime
     - image
     - node
-    - taxonomy
     - text
     - user
 id: catalogo_de_albumes
@@ -461,118 +460,19 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        field_genero_target_id:
-          id: field_genero_target_id
-          table: node__field_genero
-          field: field_genero_target_id
-          relationship: field_artista_ref
-          group_type: group
-          admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_genero_target_id_op
-            label: Género
-            description: ''
-            use_operator: false
-            operator: field_genero_target_id_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_genero_target_id
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-              editor_de_canciones: '0'
-              oyente: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          vid: generos
-          type: select
-          hierarchy: false
-          limit: true
-          error_message: true
       style:
-        type: table
+        type: grid_responsive
         options:
           grouping: {  }
-          row_class: ''
-          default_row_class: true
-          columns:
-            title: title
-            field_fecha_de_lanzamiento: field_fecha_de_lanzamiento
-            field_portada: field_portada
-            field_genero: field_genero
-            body: body
-          default: '-1'
-          info:
-            title:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_fecha_de_lanzamiento:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_portada:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_genero:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            body:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-          override: true
-          sticky: false
-          summary: ''
-          empty_table: false
-          caption: ''
-          description: ''
+          columns: 4
+          cell_min_width: 100
+          grid_gutter: 10
+          alignment: horizontal
       row:
-        type: fields
+        type: 'entity:node'
         options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
+          relationship: field_canciones
+          view_mode: teaser
       query:
         type: views_query
         options:
@@ -590,7 +490,7 @@ display:
           group_type: group
           admin_label: 'field_artista_ref: Contenido'
           plugin_id: standard
-          required: true
+          required: false
         field_canciones:
           id: field_canciones
           table: node__field_canciones
@@ -608,7 +508,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
@@ -630,7 +529,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions

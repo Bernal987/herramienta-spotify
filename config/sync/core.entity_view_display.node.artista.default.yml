@@ -12,28 +12,19 @@ dependencies:
     - node.type.artista
   module:
     - image
-    - text
     - user
-    - yoast_seo
 id: node.artista.default
 targetEntityType: node
 bundle: artista
 mode: default
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 4
-    region: content
   field_genero:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 108
+    weight: 1
     region: content
   field_image:
     type: image
@@ -44,20 +35,11 @@ content:
       image_loading:
         attribute: eager
     third_party_settings: {  }
-    weight: 2
-    region: content
-  field_seo:
-    type: yoastseo_empty_formatter
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 14
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
+    weight: 0
     region: content
 hidden:
+  body: true
   feeds_item: true
+  field_seo: true
   langcode: true
+  links: true
