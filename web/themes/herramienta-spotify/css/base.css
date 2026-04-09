@@ -1,0 +1,324 @@
+/* =============================================================================
+   BASE — Variables, reset y tipografía
+   ============================================================================= */
+
+/* Google Fonts: DM Sans (similar a Circular de Spotify) */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap');
+
+/* Variables */
+:root {
+  /* Colores Spotify */
+  --color-bg:           #121212;
+  --color-bg-elevated:  #1e1e1e;
+  --color-bg-card:      #282828;
+  --color-bg-hover:     #3e3e3e;
+  --color-green:        #1DB954;
+  --color-green-hover:  #1ed760;
+  --color-white:        #ffffff;
+  --color-text:         #e0e0e0;
+  --color-muted:        #b3b3b3;
+  --color-subtle:       #6a6a6a;
+  --color-border:       #333333;
+  --color-error:        #e91429;
+  --color-warning:      #ffa42b;
+
+  /* Tipografía */
+  --font-base:          'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-size-xs:       0.75rem;   /* 12px */
+  --font-size-sm:       0.875rem;  /* 14px */
+  --font-size-base:     1rem;      /* 16px */
+  --font-size-md:       1.125rem;  /* 18px */
+  --font-size-lg:       1.25rem;   /* 20px */
+  --font-size-xl:       1.5rem;    /* 24px */
+  --font-size-2xl:      1.875rem;  /* 30px */
+  --font-size-3xl:      2.25rem;   /* 36px */
+  --font-size-4xl:      3rem;      /* 48px */
+
+  /* Espaciado */
+  --space-xs:   0.25rem;
+  --space-sm:   0.5rem;
+  --space-md:   1rem;
+  --space-lg:   1.5rem;
+  --space-xl:   2rem;
+  --space-2xl:  3rem;
+  --space-3xl:  4rem;
+
+  /* Bordes */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-full: 9999px;
+
+  /* Sombras */
+  --shadow-sm:  0 2px 8px rgba(0,0,0,0.4);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg:  0 8px 32px rgba(0,0,0,0.6);
+
+  /* Transiciones */
+  --transition-fast:   150ms ease;
+  --transition-base:   250ms ease;
+  --transition-slow:   400ms ease;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-base);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =============================================================================
+   TÍTULOS (h1 – h6)
+   ============================================================================= */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-base);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+}
+
+h1 { font-size: var(--font-size-3xl); letter-spacing: -0.02em; }
+h2 { font-size: var(--font-size-2xl); letter-spacing: -0.01em; }
+h3 { font-size: var(--font-size-xl); }
+h4 { font-size: var(--font-size-lg); }
+h5 { font-size: var(--font-size-md); }
+h6 { font-size: var(--font-size-base); font-weight: 500; }
+
+@media (max-width: 768px) {
+  h1 { font-size: var(--font-size-2xl); }
+  h2 { font-size: var(--font-size-xl); }
+  h3 { font-size: var(--font-size-lg); }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: var(--font-size-xl); }
+  h2 { font-size: var(--font-size-lg); }
+}
+
+/* =============================================================================
+   PÁRRAFOS Y TEXTO
+   ============================================================================= */
+
+p {
+  margin-bottom: var(--space-md);
+  color: var(--color-text);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.text-muted  { color: var(--color-muted); }
+.text-subtle { color: var(--color-subtle); }
+.text-green  { color: var(--color-green); }
+.text-white  { color: var(--color-white); }
+.text-sm     { font-size: var(--font-size-sm); }
+.text-xs     { font-size: var(--font-size-xs); }
+.text-lg     { font-size: var(--font-size-lg); }
+.text-bold   { font-weight: 700; }
+.text-upper  { text-transform: uppercase; letter-spacing: 0.08em; }
+
+strong, b { font-weight: 700; color: var(--color-white); }
+em, i     { font-style: italic; }
+small     { font-size: var(--font-size-xs); color: var(--color-muted); }
+
+/* =============================================================================
+   ENLACES
+   ============================================================================= */
+
+a {
+  color: var(--color-white);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-green);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-green);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Enlace verde (estilo Spotify) */
+a.link--green {
+  color: var(--color-green);
+  font-weight: 500;
+}
+a.link--green:hover { color: var(--color-green-hover); }
+
+/* Enlace sutil */
+a.link--muted {
+  color: var(--color-muted);
+}
+a.link--muted:hover { color: var(--color-white); }
+
+/* =============================================================================
+   LISTAS
+   ============================================================================= */
+
+ul, ol {
+  padding-left: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+li {
+  margin-bottom: var(--space-xs);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* Lista sin estilos */
+ul.list--none,
+ol.list--none {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Lista horizontal */
+ul.list--inline {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+/* Lista con separador */
+ul.list--divided li {
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-sm) 0;
+  margin-bottom: 0;
+}
+ul.list--divided li:last-child {
+  border-bottom: none;
+}
+
+/* Bullet verde personalizado */
+ul.list--custom {
+  list-style: none;
+  padding-left: var(--space-lg);
+}
+ul.list--custom li::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-green);
+  margin-right: var(--space-sm);
+  margin-left: calc(-1 * var(--space-lg));
+  vertical-align: middle;
+}
+
+/* =============================================================================
+   BLOCKQUOTE Y CÓDIGO
+   ============================================================================= */
+
+blockquote {
+  border-left: 3px solid var(--color-green);
+  padding: var(--space-md) var(--space-lg);
+  margin: var(--space-lg) 0;
+  background: var(--color-bg-elevated);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: var(--space-sm);
+  font-size: var(--font-size-sm);
+  font-style: normal;
+  color: var(--color-subtle);
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.875em;
+  background: var(--color-bg-card);
+  color: var(--color-green);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+pre {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  overflow-x: auto;
+  margin-bottom: var(--space-lg);
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  color: var(--color-text);
+}
+
+/* =============================================================================
+   SEPARADOR
+   ============================================================================= */
+
+hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: var(--space-xl) 0;
+}
+
+/* =============================================================================
+   IMÁGENES
+   ============================================================================= */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+figure {
+  margin: var(--space-lg) 0;
+}
+
+figcaption {
+  margin-top: var(--space-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+  text-align: center;
+}
+
+
+#block-herramienta-spotify-views-block-albumes-por-artista-block-1 {
+  text-align:center;
+}
+
+#block-herramienta-spotify-views-block-albumes-por-artista-block-1 h2 {
+  color: var(--color-green);
+}

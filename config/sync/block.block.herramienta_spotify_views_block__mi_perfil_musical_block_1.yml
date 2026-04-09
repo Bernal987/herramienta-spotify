@@ -1,6 +1,6 @@
 uuid: 68dc9945-d865-47bf-b779-799b2d2cd90e
 langcode: es
-status: true
+status: false
 dependencies:
   config:
     - views.view.mi_perfil_musical
@@ -11,8 +11,8 @@ dependencies:
     - herramienta_spotify
 id: herramienta_spotify_views_block__mi_perfil_musical_block_1
 theme: herramienta_spotify
-region: sidebar
-weight: 0
+region: header
+weight: -1
 provider: null
 plugin: 'views_block:mi_perfil_musical-block_1'
 settings:

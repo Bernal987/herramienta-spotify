@@ -1,0 +1,19 @@
+uuid: cf63ebb0-1d63-4b37-9955-5ec8af4a8607
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_spotify_id
+    - node.type.album
+id: node.album.field_spotify_id
+field_name: field_spotify_id
+entity_type: node
+bundle: album
+label: 'ID Spotify'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

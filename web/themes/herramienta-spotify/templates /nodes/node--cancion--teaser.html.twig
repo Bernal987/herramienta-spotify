@@ -1,97 +1,60 @@
-<article style="position:relative; background:#181818; color:#ffffff; border-radius:14px; padding:16px; margin-bottom:20px; box-shadow:0 6px 15px rgba(0,0,0,0.5); transition:0.3s; transform:scale(1);" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+{%
+  set imagen_cancion = node.field_image.entity.fileuri is not empty
+    ? node.field_image.entity.fileuri | image_style('thumbnail')
+    : ''
+%}
 
-  <!-- PORTADA -->
-  <div style="margin-bottom:12px;">
-    {{ content.field_portada }}
-    <div style="position:absolute; bottom:20px; right:20px; background:#1db954; width:40px; height:40px; display:flex; align-items:center; justify-content:center; border-radius:50%; font-size:18px;">
-      ▶
+<article class="cancion-card">
+
+  {# Enlace stretched: cubre toda la card #}
+  <a href="{{ url }}" class="cancion-card__link" tabindex="-1" aria-hidden="true"></a>
+
+  {# Imagen izquierda #}
+  <div class="cancion-card__imagen">
+    {% if imagen_cancion %}
+      <img src="{{ imagen_cancion }}" alt="{{ label }}" loading="lazy" />
+    {% else %}
+      <div class="cancion-card__imagen-placeholder">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="48" height="48" rx="4" fill="#282828"/>
+          <path d="M32 16H20a2 2 0 0 0-2 2v10.586A3.5 3.5 0 1 0 21 32V22h9v6.586A3.5 3.5 0 1 0 33 32V18a2 2 0 0 0-1-1.732V16z" fill="#535353"/>
+        </svg>
+      </div>
+    {% endif %}
+    <div class="cancion-card__play-btn" aria-hidden="true">▶</div>
+  </div>
+
+  {# Contenido derecho #}
+  <div class="cancion-card__body">
+
+    <div class="cancion-card__meta">
+      <span class="cancion-card__genero">{{ content.field_genero }}</span>
+      <span class="cancion-card__duracion">{{ content.field_duracion }}</span>
     </div>
+
+    <h2 class="cancion-card__titulo">
+      <a href="{{ url }}">{{ label }}</a>
+    </h2>
+
+    {% if node.field_destacado.value %}
+      <span class="cancion-card__destacado">Destacado</span>
+    {% endif %}
+
+    <div class="cancion-card__artista">{{ content.field_artista_ref }}</div>
+
+    <div class="cancion-card__fecha">{{ content.field_fecha_de_lanzamiento }}</div>
+
+    {% if content.field_audio %}
+      <div class="cancion-card__audio">{{ content.field_audio }}</div>
+    {% endif %}
+
   </div>
 
-  <!-- GENERO Y DURACION -->
-  <div style="display:flex; justify-content:space-between; font-size:12px; color:#1db954; margin-bottom:8px;">
-    <div>{{ content.field_genero }}</div>
-    <div>{{ content.field_duracion }}</div>
-  </div>
-
-  <!-- TITULO -->
-  <h2 style="font-size:20px; font-weight:bold; margin-bottom:6px;">
-    {{ label }}
-  </h2>
-
-  <!-- DESTACADO -->
-  {% if node.field_destacado.value %}
-    <div style="margin-bottom:6px;">
-      <span style="background:#1db954; color:#000; font-size:11px; padding:3px 8px; border-radius:12px;">
-        Destacado
-      </span>
-    </div>
-  {% endif %}
-
-  <!-- ARTISTA -->
-  <div style="color:#b3b3b3; font-size:14px; margin-bottom:4px;">
-    {{ content.field_artista_ref }}
-  </div>
-
-  <!-- FECHA -->
-  <div style="font-size:12px; color:#888; margin-top:4px;">
-    {{ content.field_fecha_de_lanzamiento }}
-  </div>
-
-  <!-- AUDIO -->
-  {% if content.field_audio %}
-    <div style="margin-top:10px;">
-      {{ content.field_audio }}
-    </div>
-  {% endif %}
-
-  <!-- FAVORITO -->
+  {# Botón favorito (sobre el stretched link) #}
   {% if logged_in %}
-    <div
-      class="btn-fav"
-      data-node-id="{{ node.id() }}"
-      style="position:absolute; top:10px; right:10px; font-size:18px; cursor:pointer;">
+    <div class="btn-fav cancion-card__fav" data-node-id="{{ node.id() }}">
       <span class="fav-icon">🤍</span>
     </div>
   {% endif %}
 
 </article>
-
-<style>
-  .btn-fav.activo .fav-icon {
-    color: red;
-  }
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-
-    document.querySelectorAll('.btn-fav').forEach(btn => {
-
-      btn.addEventListener('click', function () {
-
-        const nodeId = this.dataset.nodeId;
-
-        fetch('/favorito/' + nodeId, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-          .then(res => res.json())
-          .then(data => {
-
-            if (data.estado === 'ok') {
-              this.classList.toggle('activo');
-              this.querySelector('.fav-icon').textContent =
-                this.classList.contains('activo') ? '❤️' : '🤍';
-            }
-
-          });
-
-      });
-
-    });
-
-  });
-</script>

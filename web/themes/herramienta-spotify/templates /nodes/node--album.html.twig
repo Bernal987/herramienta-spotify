@@ -1,35 +1,90 @@
-<article class="album-full">
+{%
+  set imagen_url = node.field_imagen.entity.fileuri is not empty
+    ? node.field_imagen.entity.fileuri | image_style('banner_artista')
+    : ''
+%}
 
-  <div class="album-header">
+<article class="album-perfil" itemscope itemtype="https://schema.org/MusicAlbum">
 
-    <div class="album-cover">
-      {{ content.field_portada }}
-    </div>
+  {# ── HERO ─────────────────────────────────────────────────────────────────── #}
+  <div class="album-hero" {% if imagen_url %}style="--hero-bg: url('{{ imagen_url }}')"{% endif %}>
+    <div class="album-hero__overlay"></div>
+    <div class="album-hero__content container">
 
-    <div class="album-info">
-      <h1 class="album-title">
-        {{ label }}
-      </h1>
-
-      <div class="album-meta">
-        <span class="album-artist">
-          {{ content.field_artista_ref }}
-        </span>
-
-        <span class="album-date">
-          {{ content.field_fecha_de_lanzamiento }}
-        </span>
+      {# Portada #}
+      <div class="album-hero__portada">
+        {% if imagen_url %}
+          <img src="{{ imagen_url }}" alt="{{ label }}" itemprop="image" loading="eager" />
+        {% else %}
+          <div class="album-hero__portada-placeholder">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="80" height="80" rx="6" fill="#282828"/>
+              <circle cx="40" cy="40" r="22" stroke="#535353" stroke-width="3"/>
+              <circle cx="40" cy="40" r="7"  fill="#535353"/>
+              <circle cx="40" cy="40" r="2.5" fill="#282828"/>
+            </svg>
+          </div>
+        {% endif %}
       </div>
+
+      {# Datos principales #}
+      <div class="album-hero__info">
+        <span class="album-hero__tipo">Álbum</span>
+        <h1 class="album-hero__titulo" itemprop="name">{{ label }}</h1>
+
+        <div class="album-hero__meta">
+          {% if node.field_genero.entity.name.value %}
+            <span class="artista-genero-badge" itemprop="genre">{{ node.field_genero.entity.name.value }}</span>
+          {% endif %}
+        </div>
+
+        <div class="album-hero__artista">{{ content.field_artista_ref }}</div>
+        <div class="album-hero__fecha">{{ content.field_fecha_de_lanzamiento }}</div>
+      </div>
+
     </div>
-
   </div>
 
-  <div class="album-body">
-    {{ content.body }}
-  </div>
+  {# ── CUERPO ───────────────────────────────────────────────────────────────── #}
+  <div class="album-cuerpo container">
+    <div class="album-cuerpo__grid">
 
-  <div class="album-tracks">
-    {{ content.field_canciones }}
+      {# Columna izquierda: descripción + canciones #}
+      <div class="album-col album-col--info">
+
+        {% if content.body|render|trim is not empty %}
+          <section class="album-seccion">
+            <h2 class="album-seccion__titulo">Sobre el álbum</h2>
+            <div class="album-seccion__texto">{{ content.body }}</div>
+          </section>
+        {% endif %}
+
+        {% if content.field_canciones|render|trim is not empty %}
+          <section class="album-seccion album-tracklist">
+            <h2 class="album-seccion__titulo">Canciones</h2>
+            <div class="album-tracklist__lista">
+              {{ content.field_canciones }}
+            </div>
+          </section>
+        {% endif %}
+
+      </div>
+
+      {# Columna derecha: Spotify embed #}
+      {% if node.field_spotify_id.value %}
+        <div class="album-col album-col--spotify">
+          <h2 class="album-seccion__titulo">Escuchar en Spotify</h2>
+          <div class="album-spotify-embed">
+            <iframe
+              src="https://open.spotify.com/embed/album/{{ node.field_spotify_id.value }}?utm_source=oembed"
+              allowfullscreen
+              allow="clipboard-write *; encrypted-media *; fullscreen *; picture-in-picture *;"
+            ></iframe>
+          </div>
+        </div>
+      {% endif %}
+
+    </div>
   </div>
 
 </article>

@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.artista.field_genero
     - field.field.node.artista.field_image
     - field.field.node.artista.field_seo
+    - field.field.node.artista.field_spotify_id
     - image.style.avatar_artista
     - node.type.artista
   module:
@@ -115,6 +116,14 @@ content:
       edit_description: true
       render_theme: olivero
       render_view_mode: default
+    third_party_settings: {  }
+  field_spotify_id:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select

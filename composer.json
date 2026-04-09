@@ -27,6 +27,7 @@
         "drupal/honeypot": "^2.2",
         "drupal/pathauto": "^1.14",
         "drupal/tamper": "^1.0@beta",
+        "drupal/twig_tweak": "^3.4",
         "drupal/webform": "^6.2",
         "drupal/yoast_seo": "^2.2",
         "drush/drush": "^13.7"

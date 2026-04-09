@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.cancion.field_numero_de_descargas
     - field.field.node.cancion.field_portada
     - field.field.node.cancion.field_seo
+    - field.field.node.cancion.field_spotify_id
     - node.type.cancion
   module:
     - comment
@@ -176,6 +177,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 14
+    region: content
+  field_spotify_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
     region: content
   links:
     settings: {  }

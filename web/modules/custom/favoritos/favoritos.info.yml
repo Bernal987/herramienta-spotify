@@ -1,0 +1,4 @@
+name: Favoritos
+type: module
+description: Favoritos
+core_version_requirement: '>=9.4 <11'

@@ -1,14 +1,19 @@
 name: Herramienta Spotify
 type: theme
-base theme: stark
-description: Tema custom para Spotify
-core_version_requirement: ^10
+description: Tema custom con estética Spotify para la herramienta de música.
+core_version_requirement: ^10 || ^11
+base theme: stable9
 
 libraries:
   - herramienta_spotify/global
 
 regions:
   header: Header
-  content: Content
-  sidebar: Sidebar
-  footer: Footer
+  primary_menu: 'Menú principal'
+  breadcrumb: Migas de pan
+  highlighted: Destacado
+  help: Ayuda
+  content: Contenido
+  sidebar_first: 'Barra lateral izquierda'
+  sidebar_second: 'Barra lateral derecha'
+  footer: Pie de página

@@ -20,7 +20,7 @@ $databases['default']['default']['host'] = $host;
 $databases['default']['default']['port'] = $port;
 $databases['default']['default']['driver'] = $driver;
 
-$settings['hash_salt'] = '06602ed3b0ef5b7e2e9a2e1ba47bbd75d9d4bbd5dda8e86f73905464a6cccbd7';
+$settings['hash_salt'] = '2b78da3dc866654e6ea7cb2f654df44746b6f02876acbb2a05726ab3d915e47e';
 
 // Recommended setting for Drupal 10 only
 $settings['state_cache'] = TRUE;
@@ -47,4 +47,4 @@ $config['symfony_mailer.mailer_transport.sendmail']['configuration']['port'] = '
 
 // Enable verbose logging for errors.
 // https://www.drupal.org/forum/support/post-installation/2018-07-18/enable-drupal-8-backend-errorlogdebugging-mode
-$config['system.logging']['error_level'] = 'verbose';
+//$config['system.logging']['error_level'] = 'verbose';

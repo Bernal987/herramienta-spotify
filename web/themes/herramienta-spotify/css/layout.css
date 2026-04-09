@@ -1,0 +1,451 @@
+/* =============================================================================
+   LAYOUT — Estructura de página, header, footer, grid
+   ============================================================================= */
+
+/* Contenedor principal */
+.layout-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-xl);
+  padding-right: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+}
+
+/* =============================================================================
+   HEADER
+   ============================================================================= */
+
+/* Header principal con la nueva estructura de plantilla */
+.layout-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-md) 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.header__inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+/* Columna izquierda: logo */
+.header__col-left {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Asegura que el bloque del logo no añada padding extra */
+.header__col-left #block-herramienta-spotify-marcadelsitio {
+  display: flex;
+  align-items: center;
+}
+
+.header__col-left #block-herramienta-spotify-marcadelsitio img {
+  max-height: 60px;
+  width: auto;
+  display: block;
+}
+Haz
+/* Columna derecha: navegación */
+.header__col-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Elimina márgenes del bloque de navegación */
+.header__col-right #block-herramienta-spotify-navegacionprincipal {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Menú dentro del bloque de navegación */
+.header__col-right #block-herramienta-spotify-navegacionprincipal ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.header__col-right #block-herramienta-spotify-navegacionprincipal ul li {
+  margin: 0;
+}
+
+.header__col-right #block-herramienta-spotify-navegacionprincipal ul li a {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-muted);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.header__col-right #block-herramienta-spotify-navegacionprincipal ul li a:hover,
+.header__col-right #block-herramienta-spotify-navegacionprincipal ul li a.is-active {
+  color: var(--color-white);
+  background: var(--color-bg-hover);
+}
+
+/* --- Responsive móvil --- */
+@media (max-width: 768px) {
+  .header__inner {
+    grid-template-columns: 1fr auto;
+  }
+
+  .header__col-right #block-herramienta-spotify-navegacionprincipal ul {
+    display: none;
+  }
+
+  .header__col-right.is-open #block-herramienta-spotify-navegacionprincipal ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: var(--space-md);
+    background: var(--color-bg-elevated);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-lg);
+    align-items: stretch;
+  }
+
+  .header__col-right #block-herramienta-spotify-navegacionprincipal ul li a {
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+  }
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-md) 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.site-header__inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+/* Columna izquierda */
+.site-header__col-left {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Columna derecha */
+.site-header__col-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+}
+
+/* Logo */
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  text-decoration: none;
+}
+
+.site-header__logo-img {
+  max-height: 40px;
+  width: auto;
+  display: block;
+}
+
+.site-header__logo-text {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: -0.01em;
+}
+
+.site-header__logo-text span {
+  color: var(--color-green);
+}
+
+/* Navegación principal */
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.site-header__nav a {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-muted);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-full);
+  transition: color var(--transition-fast), background var(--transition-fast);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.site-header__nav a:hover,
+.site-header__nav a.is-active {
+  color: var(--color-white);
+  background: var(--color-bg-hover);
+}
+
+/* Hamburger móvil */
+.site-header__toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-sm);
+  color: var(--color-white);
+}
+
+.site-header__toggle-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 22px;
+}
+
+.site-header__toggle-icon span {
+  display: block;
+  height: 2px;
+  background: currentColor;
+  border-radius: var(--radius-full);
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+/* Menú móvil abierto */
+.site-header.is-open .site-header__toggle-icon span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.site-header.is-open .site-header__toggle-icon span:nth-child(2) {
+  opacity: 0;
+}
+.site-header.is-open .site-header__toggle-icon span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .site-header__toggle {
+    display: flex;
+    align-items: center;
+  }
+
+  .site-header__nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--space-md);
+    background: var(--color-bg-elevated);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .site-header.is-open .site-header__nav {
+    display: flex;
+  }
+
+  .site-header__nav a {
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+  }
+}
+
+/* =============================================================================
+   CONTENIDO PRINCIPAL
+   ============================================================================= */
+
+.layout-content {
+  flex: 1;
+  padding: var(--space-2xl) 0;
+}
+
+/* Con barra lateral */
+.layout-with-sidebar {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.layout-with-sidebar--right {
+  grid-template-columns: 1fr 240px;
+}
+
+@media (max-width: 900px) {
+  .layout-with-sidebar,
+  .layout-with-sidebar--right {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============================================================================
+   BARRA LATERAL
+   ============================================================================= */
+
+.sidebar {
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+}
+
+/* =============================================================================
+   MIGAS DE PAN (Breadcrumb)
+   ============================================================================= */
+
+.breadcrumb {
+  padding: var(--space-md) 0;
+}
+
+.breadcrumb__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.breadcrumb__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+  margin-bottom: 0;
+}
+
+.breadcrumb__item::after {
+  content: '/';
+  color: var(--color-subtle);
+}
+
+.breadcrumb__item:last-child::after {
+  display: none;
+}
+
+.breadcrumb__item a {
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.breadcrumb__item a:hover {
+  color: var(--color-white);
+}
+
+.breadcrumb__item--current {
+  color: var(--color-white);
+}
+
+/* =============================================================================
+   FOOTER
+   ============================================================================= */
+
+.site-footer {
+  background: var(--color-bg-elevated);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-2xl) 0 var(--space-lg);
+  margin-top: auto;
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.site-footer__col-title {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+}
+
+.site-footer__col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-footer__col ul li {
+  margin-bottom: var(--space-sm);
+}
+
+.site-footer__col ul li a {
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+  transition: color var(--transition-fast);
+  text-decoration: none;
+}
+
+.site-footer__col ul li a:hover {
+  color: var(--color-white);
+}
+
+.site-footer__bottom {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.site-footer__copy {
+  font-size: var(--font-size-xs);
+  color: var(--color-subtle);
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.cancion.field_numero_de_descargas
     - field.field.node.cancion.field_portada
     - field.field.node.cancion.field_seo
+    - field.field.node.cancion.field_spotify_id
     - image.style.thumbnail
     - node.type.cancion
   module:
@@ -190,6 +191,14 @@ content:
       edit_description: true
       render_theme: olivero
       render_view_mode: default
+    third_party_settings: {  }
+  field_spotify_id:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select

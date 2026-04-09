@@ -1,15 +1,54 @@
-<div class="album-card">
+{%
+  set imagen_album = node.field_imagen.entity.fileuri is not empty
+    ? node.field_imagen.entity.fileuri | image_style('thumbnail')
+    : ''
+%}
 
-  <div class="album-img">
-    {{ content.field_imagen }}
+<article class="cancion-card">
+
+  {# Enlace stretched: cubre toda la card #}
+  <a href="{{ url }}" class="cancion-card__link" tabindex="-1" aria-hidden="true"></a>
+
+  {# Imagen izquierda #}
+  <div class="cancion-card__imagen">
+    {% if imagen_album %}
+      <img src="{{ imagen_album }}" alt="{{ label }}" loading="lazy" />
+    {% else %}
+      <div class="cancion-card__imagen-placeholder">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="48" height="48" rx="4" fill="#282828"/>
+          <circle cx="24" cy="24" r="13" stroke="#535353" stroke-width="2"/>
+          <circle cx="24" cy="24" r="4" fill="#535353"/>
+          <circle cx="24" cy="24" r="1.5" fill="#282828"/>
+        </svg>
+      </div>
+    {% endif %}
+    <div class="cancion-card__play-btn" aria-hidden="true">▶</div>
   </div>
 
-  <div class="album-title">
-    {{ label }}
+  {# Contenido derecho #}
+  <div class="cancion-card__body">
+
+    <div class="cancion-card__meta">
+      <span class="cancion-card__genero">{{ content.field_genero }}</span>
+      <span class="cancion-card__duracion">Álbum</span>
+    </div>
+
+    <h2 class="cancion-card__titulo">
+      <a href="{{ url }}">{{ label }}</a>
+    </h2>
+
+    <div class="cancion-card__artista">{{ content.field_artista_ref }}</div>
+
+    <div class="cancion-card__fecha">{{ content.field_fecha_de_lanzamiento }}</div>
+
   </div>
 
-  <div class="album-artist">
-    {{ content.field_artista_ref }}
-  </div>
+  {# Botón favorito (sobre el stretched link) #}
+  {% if logged_in %}
+    <div class="btn-fav cancion-card__fav" data-node-id="{{ node.id() }}">
+      <span class="fav-icon">🤍</span>
+    </div>
+  {% endif %}
 
-</div>
+</article>

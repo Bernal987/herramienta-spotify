@@ -1,0 +1,23 @@
+uuid: 1705f5b0-ba10-4aba-8ab8-4c74f247f91b
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - herramienta_spotify
+id: herramienta_spotify_marcadelsitio
+theme: herramienta_spotify
+region: header
+weight: -7
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Marca del sitio'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

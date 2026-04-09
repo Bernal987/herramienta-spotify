@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.playlist.field_image
     - field.field.node.playlist.field_privacidad
     - field.field.node.playlist.field_seo
+    - field.field.node.playlist.field_spotify_id
     - image.style.avatar_artista
     - node.type.playlist
   module:
@@ -63,6 +64,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 14
+    region: content
+  field_spotify_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
     region: content
   links:
     settings: {  }

@@ -1,6 +1,6 @@
 uuid: 60a26d50-0538-4f22-8298-cb199a923d63
 langcode: es
-status: true
+status: false
 dependencies:
   theme:
     - herramienta_spotify
@@ -9,7 +9,7 @@ _core:
 id: herramienta_spotify_primary_local_tasks
 theme: herramienta_spotify
 region: header
-weight: 0
+weight: -4
 provider: null
 plugin: local_tasks_block
 settings:

@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.album.field_image
     - field.field.node.album.field_portada
     - field.field.node.album.field_seo
+    - field.field.node.album.field_spotify_id
     - node.type.album
   module:
     - datetime
@@ -85,6 +86,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 14
+    region: content
+  field_spotify_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
     region: content
   links:
     settings: {  }

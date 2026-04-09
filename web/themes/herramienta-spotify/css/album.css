@@ -1,0 +1,250 @@
+/* =============================================================================
+   ÁLBUM — Ficha completa (node--album)
+   ============================================================================= */
+
+.album-perfil {
+  --hero-bg: none;
+}
+
+/* Hero */
+.album-hero {
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  align-items: flex-end;
+  background-color: #1a1a1a;
+  background-image: var(--hero-bg);
+  background-size: cover;
+  background-position: center top;
+  overflow: hidden;
+}
+
+.album-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.2) 0%,
+    rgba(0,0,0,0.65) 55%,
+    rgba(18,18,18,1) 100%
+  );
+}
+
+.album-hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 32px;
+  padding-top: 48px;
+  padding-bottom: 40px;
+  width: 100%;
+}
+
+/* Portada cuadrada con sombra */
+.album-hero__portada {
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+}
+
+.album-hero__portada img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.album-hero__portada-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #282828;
+}
+
+.album-hero__portada-placeholder svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Info */
+.album-hero__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.album-hero__tipo {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 8px;
+}
+
+.album-hero__titulo {
+  font-size: clamp(28px, 5vw, 56px);
+  font-weight: 900;
+  color: #fff;
+  margin: 0 0 16px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.album-hero__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.album-hero__artista {
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.album-hero__artista a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.album-hero__artista a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.album-hero__fecha {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+}
+
+/* Cuerpo */
+.album-cuerpo {
+  padding: 48px 0 80px;
+}
+
+.album-cuerpo__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.album-col--info {
+  grid-column: 1;
+}
+
+.album-col--spotify {
+  grid-column: 2;
+}
+
+/* Secciones */
+.album-seccion {
+  margin-bottom: 40px;
+}
+
+.album-seccion__titulo {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #2a2a2a;
+  letter-spacing: -0.01em;
+}
+
+.album-seccion__texto {
+  font-size: 15px;
+  color: #b3b3b3;
+  line-height: 1.7;
+}
+
+/* Tracklist */
+.album-tracklist__lista .field__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  transition: background 0.15s;
+  counter-increment: track;
+}
+
+.album-tracklist__lista .field__item:hover {
+  background: #282828;
+}
+
+.album-tracklist__lista .field__item::before {
+  content: counter(track);
+  font-size: 14px;
+  color: #6a6a6a;
+  min-width: 20px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.album-tracklist__lista {
+  counter-reset: track;
+}
+
+/* Spotify embed */
+.album-col--spotify .album-seccion__titulo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.album-col--spotify .album-seccion__titulo::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%231db954' d='M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z'/%3E%3C/svg%3E") no-repeat center/contain;
+}
+
+.album-spotify-embed {
+  width: 100%;
+}
+
+.album-spotify-embed iframe {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 352px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .album-hero__content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .album-hero__portada {
+    width: 130px;
+    height: 130px;
+  }
+
+  .album-cuerpo__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .album-col--info,
+  .album-col--spotify {
+    grid-column: 1;
+  }
+}

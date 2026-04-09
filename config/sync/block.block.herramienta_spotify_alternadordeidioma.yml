@@ -1,6 +1,6 @@
 uuid: d860c537-8c0f-4d02-9745-433356c2caa8
 langcode: es
-status: true
+status: false
 dependencies:
   module:
     - language
@@ -9,7 +9,7 @@ dependencies:
 id: herramienta_spotify_alternadordeidioma
 theme: herramienta_spotify
 region: header
-weight: 0
+weight: -5
 provider: null
 plugin: 'language_block:language_interface'
 settings:

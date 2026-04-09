@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.playlist.field_image
     - field.field.node.playlist.field_privacidad
     - field.field.node.playlist.field_seo
+    - field.field.node.playlist.field_spotify_id
     - image.style.medium
     - node.type.playlist
   module:
@@ -50,4 +51,5 @@ hidden:
   field_canciones: true
   field_privacidad: true
   field_seo: true
+  field_spotify_id: true
   langcode: true
