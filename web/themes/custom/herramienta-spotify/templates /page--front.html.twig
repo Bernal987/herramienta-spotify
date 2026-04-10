@@ -70,6 +70,9 @@
             <a href="/canciones" class="btn btn--primary btn--lg">
               Explorar ahora
             </a>
+            <a href="/biblioteca" class="btn btn--outline btn--lg">
+              Ver biblioteca
+            </a>
             {% if not logged_in %}
               <a href="/user/register" class="btn btn--outline btn--lg">
                 Crear cuenta gratis
@@ -107,7 +110,7 @@
           <div class="home-hero__visual-card">
             <div class="home-hero__visual-icon home-hero__visual-icon--blue">💿</div>
             <div class="home-hero__visual-info">
-              <strong>Álbumes</strong>
+              <strong>Biblioteca</strong>
               <span>Discografías completas</span>
             </div>
           </div>
@@ -115,7 +118,7 @@
           <div class="home-hero__visual-card">
             <div class="home-hero__visual-icon home-hero__visual-icon--orange">🎧</div>
             <div class="home-hero__visual-info">
-              <strong>Playlists</strong>
+              <strong>Playlist</strong>
               <span>Listas para cada momento</span>
             </div>
           </div>
@@ -166,18 +169,18 @@
             <div class="home-feature-card__count">Explorar canciones →</div>
           </a>
 
-          <a href="/albumes" class="home-feature-card">
-            <div class="home-feature-card__icon">💿</div>
-            <h3 class="home-feature-card__title">Álbumes</h3>
+          <a href="/biblioteca" class="home-feature-card">
+            <div class="home-feature-card__icon">📚</div>
+            <h3 class="home-feature-card__title">Bibliotecas</h3>
             <p class="home-feature-card__desc">
-              Explora álbumes completos con su tracklist, fecha de lanzamiento y embed de Spotify.
+              Explora bibliotecas completas con su tracklist, fecha de lanzamiento y embed de Spotify.
             </p>
-            <div class="home-feature-card__count">Explorar álbumes →</div>
+            <div class="home-feature-card__count">Explorar Bibliotecas →</div>
           </a>
 
-          <a href="/playlists" class="home-feature-card">
+          <a href="/playlist" class="home-feature-card">
             <div class="home-feature-card__icon">🎧</div>
-            <h3 class="home-feature-card__title">Playlists</h3>
+            <h3 class="home-feature-card__title">Playlist</h3>
             <p class="home-feature-card__desc">
               Listas de reproducción temáticas para cada momento del día, estado de ánimo o género.
             </p>
@@ -271,6 +274,9 @@
         <div class="home-cta__actions">
           <a href="/canciones" class="btn btn--primary btn--lg">
             Ver canciones
+          </a>
+          <a href="/biblioteca" class="btn btn--outline btn--lg">
+            Ver biblioteca
           </a>
           {% if not logged_in %}
             <a href="/user/login" class="btn btn--outline btn--lg">
