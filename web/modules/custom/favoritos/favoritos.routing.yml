@@ -1,0 +1,10 @@
+favoritos.toggle:
+  path: '/api/favoritos/toggle/{node}'
+  defaults:
+    _controller: '\Drupal\favoritos\Controller\FavoritosController::toggle'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+    node: \d+
+  methods: [POST]
+  options:
+    _csrf_token: 'TRUE'

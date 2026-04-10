@@ -1,0 +1,84 @@
+{#
+/**
+ * @file
+ * Template del menú de cuenta de usuario.
+ *
+ * Variables disponibles:
+ * - items: lista de enlaces del menú.
+ *   Cada item: title, url, in_active_trail, attributes, below.
+ * - menu_name: nombre del menú ('account').
+ * - attributes: atributos HTML del wrapper.
+ */
+#}
+
+{% if items %}
+  <nav class="account-menu" aria-label="{{ 'Cuenta de usuario'|t }}">
+
+    {#
+      Detectamos si el usuario está autenticado:
+      el enlace de logout solo existe cuando está logueado.
+    #}
+    {% set is_logged_in = false %}
+    {% set user_name    = '' %}
+    {% for item in items %}
+      {% if 'user.logout' in item.url.toString or 'logout' in item.url.toString %}
+        {% set is_logged_in = true %}
+      {% endif %}
+    {% endfor %}
+
+    {# ── TRIGGER ── #}
+    <button class="account-menu__trigger"
+            type="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="account-menu-dropdown">
+      <span class="account-menu__avatar" aria-hidden="true">
+        {% if is_logged_in %}
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="8"  r="4" fill="currentColor"/>
+            <path d="M4 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        {% else %}
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="9"  r="3"  stroke="currentColor" stroke-width="2"/>
+            <path d="M6 20c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        {% endif %}
+      </span>
+      <span class="account-menu__label">
+        {{ is_logged_in ? 'Mi cuenta'|t : 'Acceder'|t }}
+      </span>
+      <span class="account-menu__chevron" aria-hidden="true">
+        <svg viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </button>
+
+    {# ── DROPDOWN ── #}
+    <ul class="account-menu__dropdown"
+        id="account-menu-dropdown"
+        role="menu"
+        aria-hidden="true">
+
+      {% for item in items %}
+        {%
+          set item_classes = [
+            'account-menu__item',
+            item.in_active_trail ? 'is-active' : '',
+          ]
+        %}
+        <li{{ item.attributes.addClass(item_classes) }} role="none">
+          {{ link(item.title, item.url, {
+            'class':            ['account-menu__link'],
+            'role':             'menuitem',
+            'tabindex':         '-1',
+          }) }}
+        </li>
+      {% endfor %}
+
+    </ul>
+
+  </nav>
+{% endif %}

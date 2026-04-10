@@ -8,7 +8,7 @@ slogan: ''
 page:
   403: ''
   404: ''
-  front: /canciones
+  front: /node/4357
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: es

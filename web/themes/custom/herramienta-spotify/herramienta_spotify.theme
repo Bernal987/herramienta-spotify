@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Funciones de preprocesado para el tema herramienta_spotify.
+ */
+
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function herramienta_spotify_preprocess_node(&$variables) {
+  $bundles_con_favorito = ['cancion', 'artista', 'album', 'playlist'];
+  $view_modes_con_favorito = ['teaser', 'full'];
+  if (!in_array($variables['node']->bundle(), $bundles_con_favorito) || !in_array($variables['view_mode'], $view_modes_con_favorito)) {
+    return;
+  }
+
+  $variables['is_favorito'] = FALSE;
+
+  $current_user = \Drupal::currentUser();
+  if ($current_user->isAnonymous()) {
+    return;
+  }
+
+  $user = User::load($current_user->id());
+  if (!$user) {
+    return;
+  }
+
+  $node_id = (int) $variables['node']->id();
+  $target_ids = array_column($user->get('field_favoritos')->getValue(), 'target_id');
+  $variables['is_favorito'] = in_array($node_id, array_map('intval', $target_ids));
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function herramienta_spotify_preprocess_page(&$variables) {
+  if ($variables['is_front']) {
+    $variables['#attached']['library'][] = 'herramienta_spotify/home';
+  }
+}

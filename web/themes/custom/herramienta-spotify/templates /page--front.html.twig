@@ -1,0 +1,367 @@
+{#
+/**
+ * @file
+ * Template de la página de inicio (front page).
+ */
+#}
+
+<div class="layout-container page--front">
+
+  {# ── HEADER (sticky, igual que el resto del sitio) ─────────────────────────── #}
+  <header class="layout-header">
+    <div class="container">
+      <div class="header__inner">
+
+        <div class="header__col-left">
+          {% if page.pre_header|render|trim is not empty %}
+            {{ page.pre_header }}
+          {% endif %}
+          {% if page.header|render|trim is not empty %}
+            {{ page.header }}
+          {% endif %}
+        </div>
+
+        {% if page.primary_menu|render|trim is not empty %}
+          <div class="header__col-right">
+            {{ page.primary_menu }}
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    {# ── HERO BANNER ────────────────────────────────────────────────────────────── #}
+    <section class="home-hero" aria-label="Portada">
+
+      {# Fondo animado #}
+      <div class="home-hero__bg" aria-hidden="true"></div>
+
+      {# Partículas flotantes #}
+      <div class="home-hero__particles" aria-hidden="true">
+        <div class="home-hero__particle"></div>
+        <div class="home-hero__particle"></div>
+        <div class="home-hero__particle"></div>
+        <div class="home-hero__particle"></div>
+        <div class="home-hero__particle"></div>
+        <div class="home-hero__particle"></div>
+      </div>
+
+      <div class="container home-hero__content">
+
+        {# Texto izquierdo #}
+        <div class="home-hero__text">
+
+          <p class="home-hero__pretitle">Tu biblioteca musical</p>
+
+          <h1 class="home-hero__title">
+            Descubre la música
+            <span class="home-hero__title-accent">que te mueve</span>
+          </h1>
+
+          <p class="home-hero__subtitle">
+            Explora artistas, canciones, álbumes y playlists. Guarda tus favoritos
+            y encuentra siempre lo que estás buscando en un solo lugar.
+          </p>
+
+          <div class="home-hero__actions">
+            <a href="/canciones" class="btn btn--primary btn--lg">
+              Explorar ahora
+            </a>
+            {% if not logged_in %}
+              <a href="/user/register" class="btn btn--outline btn--lg">
+                Crear cuenta gratis
+              </a>
+            {% else %}
+              <a href="/artistas" class="btn btn--outline btn--lg">
+                Ver artistas
+              </a>
+            {% endif %}
+          </div>
+
+          <p class="home-hero__note">Sin publicidad. Sin límites.</p>
+
+        </div>
+
+        {# Visual flotante derecho #}
+        <div class="home-hero__visual" aria-hidden="true">
+
+          <div class="home-hero__visual-card">
+            <div class="home-hero__visual-icon home-hero__visual-icon--green">🎵</div>
+            <div class="home-hero__visual-info">
+              <strong>Canciones</strong>
+              <span>Miles de tracks disponibles</span>
+            </div>
+          </div>
+
+          <div class="home-hero__visual-card">
+            <div class="home-hero__visual-icon home-hero__visual-icon--purple">🎤</div>
+            <div class="home-hero__visual-info">
+              <strong>Artistas</strong>
+              <span>Descubre nuevos talentos</span>
+            </div>
+          </div>
+
+          <div class="home-hero__visual-card">
+            <div class="home-hero__visual-icon home-hero__visual-icon--blue">💿</div>
+            <div class="home-hero__visual-info">
+              <strong>Álbumes</strong>
+              <span>Discografías completas</span>
+            </div>
+          </div>
+
+          <div class="home-hero__visual-card">
+            <div class="home-hero__visual-icon home-hero__visual-icon--orange">🎧</div>
+            <div class="home-hero__visual-info">
+              <strong>Playlists</strong>
+              <span>Listas para cada momento</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      {# Ola decorativa de transición #}
+      <div class="home-hero__wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#121212"/>
+        </svg>
+      </div>
+
+    </section>
+
+    {# ── FEATURES — 4 categorías ────────────────────────────────────────────────── #}
+    <section class="home-features" aria-labelledby="features-title">
+      <div class="container">
+
+        <div class="home-features__header">
+          <span class="home-features__label">Qué puedes encontrar</span>
+          <h2 class="home-features__title" id="features-title">Todo en un mismo sitio</h2>
+          <p class="home-features__subtitle">
+            Navega por las cuatro categorías de contenido musical y guarda
+            lo que más te guste con un solo clic.
+          </p>
+        </div>
+
+        <div class="home-features__grid">
+
+          <a href="/artistas" class="home-feature-card">
+            <div class="home-feature-card__icon">🎤</div>
+            <h3 class="home-feature-card__title">Artistas</h3>
+            <p class="home-feature-card__desc">
+              Conoce la historia, el género y la discografía completa de tus artistas favoritos.
+            </p>
+            <div class="home-feature-card__count">Explorar artistas →</div>
+          </a>
+
+          <a href="/canciones" class="home-feature-card">
+            <div class="home-feature-card__icon">🎵</div>
+            <h3 class="home-feature-card__title">Canciones</h3>
+            <p class="home-feature-card__desc">
+              Busca por género, artista o título y escucha una vista previa directamente en la página.
+            </p>
+            <div class="home-feature-card__count">Explorar canciones →</div>
+          </a>
+
+          <a href="/albumes" class="home-feature-card">
+            <div class="home-feature-card__icon">💿</div>
+            <h3 class="home-feature-card__title">Álbumes</h3>
+            <p class="home-feature-card__desc">
+              Explora álbumes completos con su tracklist, fecha de lanzamiento y embed de Spotify.
+            </p>
+            <div class="home-feature-card__count">Explorar álbumes →</div>
+          </a>
+
+          <a href="/playlists" class="home-feature-card">
+            <div class="home-feature-card__icon">🎧</div>
+            <h3 class="home-feature-card__title">Playlists</h3>
+            <p class="home-feature-card__desc">
+              Listas de reproducción temáticas para cada momento del día, estado de ánimo o género.
+            </p>
+            <div class="home-feature-card__count">Explorar playlists →</div>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    {# ── HOW IT WORKS ────────────────────────────────────────────────────────────── #}
+    <section class="home-how" aria-labelledby="how-title">
+      <div class="container home-how__inner">
+
+        <div class="home-how__text-col">
+          <span class="home-how__label">Cómo funciona</span>
+          <h2 class="home-how__title" id="how-title">
+            Encuentra, descubre y guarda tu música en tres pasos
+          </h2>
+
+          <ul class="home-how__steps">
+            <li class="home-how__step">
+              <div class="home-how__step-num">1</div>
+              <div class="home-how__step-body">
+                <strong>Explora el catálogo</strong>
+                <p>Navega por artistas, canciones, álbumes y playlists desde el menú o usa la búsqueda para encontrar algo concreto.</p>
+              </div>
+            </li>
+            <li class="home-how__step">
+              <div class="home-how__step-num">2</div>
+              <div class="home-how__step-body">
+                <strong>Escucha y descubre</strong>
+                <p>Cada canción incluye un reproductor de audio y un embed de Spotify para que puedas escucharla directamente.</p>
+              </div>
+            </li>
+            <li class="home-how__step">
+              <div class="home-how__step-num">3</div>
+              <div class="home-how__step-body">
+                <strong>Marca tus favoritos</strong>
+                <p>Con una cuenta gratuita puedes guardar en favoritos cualquier artista, canción, álbum o playlist con un solo clic en el corazón.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="home-how__visual" aria-hidden="true">
+          <p class="home-how__visual-title">Tus favoritos recientes</p>
+
+          <div class="home-how__mini-card">
+            <div class="home-how__mini-thumb home-how__mini-thumb--music">🎵</div>
+            <div class="home-how__mini-info">
+              <strong>Canción destacada</strong>
+              <span>Género · 3:45</span>
+            </div>
+            <div class="home-how__mini-heart">❤️</div>
+          </div>
+
+          <div class="home-how__mini-card">
+            <div class="home-how__mini-thumb home-how__mini-thumb--artist">🎤</div>
+            <div class="home-how__mini-info">
+              <strong>Artista favorito</strong>
+              <span>Rock · 24 canciones</span>
+            </div>
+            <div class="home-how__mini-heart">❤️</div>
+          </div>
+
+          <div class="home-how__mini-card">
+            <div class="home-how__mini-thumb home-how__mini-thumb--album">💿</div>
+            <div class="home-how__mini-info">
+              <strong>Álbum del año</strong>
+              <span>Pop · 2024</span>
+            </div>
+            <div class="home-how__mini-heart">❤️</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    {# ── CTA ─────────────────────────────────────────────────────────────────────── #}
+    <section class="home-cta" aria-labelledby="cta-title">
+      <div class="home-cta__inner">
+        <h2 class="home-cta__title" id="cta-title">
+          Empieza a explorar ahora
+        </h2>
+        <p class="home-cta__subtitle">
+          Accede a todo el catálogo sin restricciones. Crea una cuenta para guardar tus favoritos.
+        </p>
+        <div class="home-cta__actions">
+          <a href="/canciones" class="btn btn--primary btn--lg">
+            Ver canciones
+          </a>
+          {% if not logged_in %}
+            <a href="/user/login" class="btn btn--outline btn--lg">
+              Iniciar sesión
+            </a>
+          {% else %}
+            <a href="/artistas" class="btn btn--outline btn--lg">
+              Ver artistas
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+
+    {# Contenido de la región content de Drupal (bloques, mensajes, etc.) #}
+    {% if page.content|render|trim is not empty %}
+      <div class="container" style="padding-top: var(--space-xl); padding-bottom: var(--space-xl);">
+        {{ page.content }}
+      </div>
+    {% endif %}
+
+  </main>
+
+  {# ── FOOTER ──────────────────────────────────────────────────────────────────── #}
+  <footer class="home-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="home-footer__grid">
+
+        {# Marca #}
+        <div class="home-footer__brand">
+          <div class="home-footer__brand-name">
+            Herramienta <span>Spotify</span>
+          </div>
+          <p class="home-footer__brand-desc">
+            Tu catálogo musical de referencia. Descubre, escucha y guarda
+            los artistas, canciones y álbumes que te apasionan.
+          </p>
+          <div class="home-footer__social">
+            <a href="#" class="home-footer__social-link" aria-label="Twitter">𝕏</a>
+            <a href="#" class="home-footer__social-link" aria-label="Instagram">📸</a>
+            <a href="#" class="home-footer__social-link" aria-label="Spotify">🎵</a>
+          </div>
+        </div>
+
+        {# Explorar #}
+        <div>
+          <h3 class="home-footer__col-title">Explorar</h3>
+          <ul class="home-footer__col-list">
+            <li><a href="/artistas">Artistas</a></li>
+            <li><a href="/canciones">Canciones</a></li>
+            <li><a href="/albumes">Álbumes</a></li>
+            <li><a href="/playlists">Playlists</a></li>
+          </ul>
+        </div>
+
+        {# Cuenta #}
+        <div>
+          <h3 class="home-footer__col-title">Tu cuenta</h3>
+          <ul class="home-footer__col-list">
+            {% if logged_in %}
+              <li><a href="/user">Mi perfil</a></li>
+              <li><a href="/user/logout">Cerrar sesión</a></li>
+            {% else %}
+              <li><a href="/user/login">Iniciar sesión</a></li>
+              <li><a href="/user/register">Registrarse</a></li>
+            {% endif %}
+          </ul>
+        </div>
+
+        {# Drupal footer region #}
+        {% if page.footer|render|trim is not empty %}
+          <div>
+            {{ page.footer }}
+          </div>
+        {% endif %}
+
+      </div>
+
+      <div class="home-footer__bottom">
+        <p class="home-footer__copy">
+          &copy; {{ "now"|date("Y") }} Herramienta Spotify. Proyecto académico.
+        </p>
+        <div class="home-footer__bottom-links">
+          <a href="#">Privacidad</a>
+          <a href="#">Términos</a>
+          <a href="#">Accesibilidad</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</div>{# /.layout-container #}

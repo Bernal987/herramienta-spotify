@@ -9,7 +9,16 @@ global:
       css/components.css: {}
       css/cancion.css: {}
       css/album.css: {}
+      css/style.css: {}
   js:
     js/main.js: {}
   dependencies:
     - core/drupal
+
+home:
+  version: VERSION
+  css:
+    theme:
+      css/home.css: {}
+  dependencies:
+    - herramienta_spotify/global

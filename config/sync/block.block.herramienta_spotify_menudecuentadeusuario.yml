@@ -1,0 +1,25 @@
+uuid: 5ce190e0-6b01-4b88-ab90-ca28d838c4c4
+langcode: es
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - herramienta_spotify
+id: herramienta_spotify_menudecuentadeusuario
+theme: herramienta_spotify
+region: primary_menu
+weight: -5
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'Menú de cuenta de usuario'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

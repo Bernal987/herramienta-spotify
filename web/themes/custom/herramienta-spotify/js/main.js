@@ -7,6 +7,70 @@
   Drupal.behaviors.herramientaSpotify = {
     attach: function (context, settings) {
 
+      // --- Menú de cuenta de usuario (dropdown) ---
+      const accountMenus = context.querySelectorAll('.account-menu');
+      accountMenus.forEach(function (menu) {
+        if (menu.dataset.accountInit) return;
+        menu.dataset.accountInit = '1';
+
+        const trigger  = menu.querySelector('.account-menu__trigger');
+        const dropdown = menu.querySelector('.account-menu__dropdown');
+        if (!trigger || !dropdown) return;
+
+        function positionDropdown() {
+          var rect = trigger.getBoundingClientRect();
+          dropdown.style.top   = (rect.bottom + 8) + 'px';
+          dropdown.style.right = (window.innerWidth - rect.right) + 'px';
+          dropdown.style.left  = 'auto';
+        }
+
+        function openMenu() {
+          positionDropdown();
+          menu.setAttribute('data-open', '');
+          trigger.setAttribute('aria-expanded', 'true');
+          dropdown.removeAttribute('aria-hidden');
+          var firstLink = dropdown.querySelector('.account-menu__link');
+          if (firstLink) firstLink.focus();
+        }
+
+        function closeMenu() {
+          menu.removeAttribute('data-open');
+          trigger.setAttribute('aria-expanded', 'false');
+          dropdown.setAttribute('aria-hidden', 'true');
+        }
+
+        trigger.addEventListener('click', function (e) {
+          e.stopPropagation();
+          menu.hasAttribute('data-open') ? closeMenu() : openMenu();
+        });
+
+        // Reposicionar si la ventana cambia de tamaño con el menú abierto
+        window.addEventListener('resize', function () {
+          if (menu.hasAttribute('data-open')) positionDropdown();
+        });
+
+        // Cerrar al hacer click fuera
+        document.addEventListener('click', function (e) {
+          if (!menu.contains(e.target) && !dropdown.contains(e.target)) closeMenu();
+        });
+
+        // Navegación por teclado dentro del dropdown
+        dropdown.addEventListener('keydown', function (e) {
+          var links = Array.from(dropdown.querySelectorAll('.account-menu__link'));
+          var idx   = links.indexOf(document.activeElement);
+          if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            links[(idx + 1) % links.length].focus();
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            links[(idx - 1 + links.length) % links.length].focus();
+          } else if (e.key === 'Escape') {
+            closeMenu();
+            trigger.focus();
+          }
+        });
+      });
+
       // --- Menú hamburger móvil ---
       const header = context.querySelector('.site-header');
       const toggleBtn = context.querySelector('.site-header__toggle');
