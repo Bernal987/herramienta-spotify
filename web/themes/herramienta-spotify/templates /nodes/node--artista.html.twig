@@ -50,6 +50,17 @@
             <span class="artista-genero-badge" itemprop="genre">{{ genero }}</span>
           {% endif %}
         </div>
+
+        {% if logged_in %}
+          <div class="btn-fav artista-hero__fav{{ is_favorito ? ' is-favorito' : '' }}"
+               data-node-id="{{ node.id() }}"
+               aria-label="{{ is_favorito ? 'Quitar de favoritos' : 'Marcar como favorito' }}"
+               role="button"
+               tabindex="0">
+            <span class="fav-icon">{{ is_favorito ? '❤️' : '🤍' }}</span>
+            <span class="fav-label">{{ is_favorito ? 'Marcado como favorito' : 'Marcar como favorito' }}</span>
+          </div>
+        {% endif %}
       </div>
 
     </div>

@@ -45,6 +45,59 @@
         }
       });
 
+      // --- Botón favorito ---
+      const favBtns = context.querySelectorAll('.btn-fav');
+      favBtns.forEach(function (btn) {
+        if (btn.dataset.favInit) return;
+        btn.dataset.favInit = '1';
+
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const nodeId = btn.dataset.nodeId;
+          if (!nodeId) return;
+
+          fetch('/session/token')
+            .then(function (r) { return r.text(); })
+            .then(function (csrfToken) {
+              return fetch('/api/favoritos/toggle/' + nodeId, {
+                method: 'POST',
+                headers: {
+                  'X-CSRF-Token': csrfToken,
+                  'Content-Type': 'application/json',
+                },
+              });
+            })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+              const icon  = btn.querySelector('.fav-icon');
+              const label = btn.querySelector('.fav-label');
+              if (data.activo) {
+                btn.classList.add('is-favorito');
+                btn.setAttribute('aria-label', Drupal.t('Quitar de favoritos'));
+                if (icon)  icon.textContent  = '❤️';
+                if (label) label.textContent = Drupal.t('Marcado como favorito');
+              } else {
+                btn.classList.remove('is-favorito');
+                btn.setAttribute('aria-label', Drupal.t('Marcar como favorito'));
+                if (icon)  icon.textContent  = '🤍';
+                if (label) label.textContent = Drupal.t('Marcar como favorito');
+              }
+            })
+            .catch(function (err) {
+              console.error('Error al actualizar favorito:', err);
+            });
+        });
+
+        btn.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            btn.click();
+          }
+        });
+      });
+
       // --- Header con fondo al hacer scroll ---
       const siteHeader = context.querySelector('.site-header');
       if (siteHeader) {

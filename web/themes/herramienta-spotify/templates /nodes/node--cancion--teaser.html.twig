@@ -52,8 +52,12 @@
 
   {# Botón favorito (sobre el stretched link) #}
   {% if logged_in %}
-    <div class="btn-fav cancion-card__fav" data-node-id="{{ node.id() }}">
-      <span class="fav-icon">🤍</span>
+    <div class="btn-fav cancion-card__fav{{ is_favorito ? ' is-favorito' : '' }}"
+         data-node-id="{{ node.id() }}"
+         aria-label="{{ is_favorito ? 'Quitar de favoritos' : 'Añadir a favoritos' }}"
+         role="button"
+         tabindex="0">
+      <span class="fav-icon">{{ is_favorito ? '❤️' : '🤍' }}</span>
     </div>
   {% endif %}
 

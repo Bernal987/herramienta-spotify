@@ -1,0 +1,63 @@
+<article class="playlist-perfil" itemscope itemtype="https://schema.org/MusicPlaylist">
+
+  {# ── HERO ─────────────────────────────────────────────────────────────────── #}
+  <div class="playlist-hero">
+    <div class="playlist-hero__overlay"></div>
+    <div class="playlist-hero__content container">
+
+      {# Imagen #}
+      <div class="playlist-hero__portada">
+        {% if content.field_image|render|trim is not empty %}
+          {{ content.field_image }}
+        {% else %}
+          <div class="playlist-hero__portada-placeholder">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="80" height="80" rx="6" fill="#282828"/>
+              <path d="M28 28h24v4H28zm0 10h24v4H28zm0 10h16v4H28z" fill="#535353"/>
+            </svg>
+          </div>
+        {% endif %}
+      </div>
+
+      {# Datos principales #}
+      <div class="playlist-hero__info">
+        <span class="playlist-hero__tipo">Playlist</span>
+        <h1 class="playlist-hero__titulo" itemprop="name">{{ label }}</h1>
+
+        {% if logged_in %}
+          <div class="btn-fav playlist-hero__fav{{ is_favorito ? ' is-favorito' : '' }}"
+               data-node-id="{{ node.id() }}"
+               aria-label="{{ is_favorito ? 'Quitar de favoritos' : 'Marcar como favorito' }}"
+               role="button"
+               tabindex="0">
+            <span class="fav-icon">{{ is_favorito ? '❤️' : '🤍' }}</span>
+            <span class="fav-label">{{ is_favorito ? 'Marcado como favorito' : 'Marcar como favorito' }}</span>
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+
+  {# ── CUERPO ───────────────────────────────────────────────────────────────── #}
+  <div class="playlist-cuerpo container">
+    <div class="playlist-cuerpo__grid">
+
+      {% if content.body|render|trim is not empty %}
+        <section class="playlist-seccion">
+          <h2 class="playlist-seccion__titulo">Sobre la playlist</h2>
+          <div class="playlist-seccion__texto">{{ content.body }}</div>
+        </section>
+      {% endif %}
+
+      {% if content.field_canciones|render|trim is not empty %}
+        <section class="playlist-seccion playlist-tracklist">
+          <h2 class="playlist-seccion__titulo">Canciones</h2>
+          <div class="playlist-tracklist__lista">{{ content.field_canciones }}</div>
+        </section>
+      {% endif %}
+
+    </div>
+  </div>
+
+</article>

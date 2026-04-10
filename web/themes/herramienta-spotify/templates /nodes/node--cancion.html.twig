@@ -29,6 +29,17 @@
       <div class="cancion-hero__info">
         <span class="cancion-hero__tipo">Canción</span>
         <h1 class="cancion-hero__titulo" itemprop="name">{{ label }}</h1>
+
+        {% if logged_in %}
+          <div class="btn-fav cancion-hero__fav{{ is_favorito ? ' is-favorito' : '' }}"
+               data-node-id="{{ node.id() }}"
+               aria-label="{{ is_favorito ? 'Quitar de favoritos' : 'Marcar como favorito' }}"
+               role="button"
+               tabindex="0">
+            <span class="fav-icon">{{ is_favorito ? '❤️' : '🤍' }}</span>
+            <span class="fav-label">{{ is_favorito ? 'Marcado como favorito' : 'Marcar como favorito' }}</span>
+          </div>
+        {% endif %}
       </div>
 
     </div>

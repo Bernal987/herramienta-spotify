@@ -40,6 +40,17 @@
 
         <div class="album-hero__artista">{{ content.field_artista_ref }}</div>
         <div class="album-hero__fecha">{{ content.field_fecha_de_lanzamiento }}</div>
+
+        {% if logged_in %}
+          <div class="btn-fav album-hero__fav{{ is_favorito ? ' is-favorito' : '' }}"
+               data-node-id="{{ node.id() }}"
+               aria-label="{{ is_favorito ? 'Quitar de favoritos' : 'Marcar como favorito' }}"
+               role="button"
+               tabindex="0">
+            <span class="fav-icon">{{ is_favorito ? '❤️' : '🤍' }}</span>
+            <span class="fav-label">{{ is_favorito ? 'Marcado como favorito' : 'Marcar como favorito' }}</span>
+          </div>
+        {% endif %}
       </div>
 
     </div>
